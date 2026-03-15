@@ -26,10 +26,34 @@ export async function POST(request: Request) {
     // First delete existing questions to replace them (as per V1.0 behavior)
     await supabase.from('questions').delete().neq('id', 0); // Delete all
 
+    const parsedQuestions = questions.map((q: {
+      text: string;
+      image?: string;
+      options?: { A: string; B: string; C: string; D: string };
+      option_a?: string;
+      option_b?: string;
+      option_c?: string;
+      option_d?: string;
+      correctAnswer?: string;
+      correct_answer?: string;
+      explanation?: string;
+      category?: string;
+    }) => ({
+      text: q.text,
+      image: q.image || null,
+      option_a: q.options?.A || q.option_a,
+      option_b: q.options?.B || q.option_b,
+      option_c: q.options?.C || q.option_c,
+      option_d: q.options?.D || q.option_d,
+      correct_answer: q.correctAnswer || q.correct_answer,
+      explanation: q.explanation || '',
+      category: q.category || 'General'
+    }));
+
     // Insert new questions
     const { data, error } = await supabase
       .from('questions')
-      .insert(questions)
+      .insert(parsedQuestions)
       .select();
 
     if (error) {
