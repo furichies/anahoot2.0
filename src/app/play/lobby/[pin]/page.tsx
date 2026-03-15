@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase';
-import { useGameStore } from '@/stores/game-store';
 import { Loader2 } from 'lucide-react';
 import { RealtimeChannel } from '@supabase/supabase-js';
 
@@ -12,7 +11,6 @@ export default function PlayerLobby() {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [username, setUsername] = useState('');
-  const [channel, setChannel] = useState<RealtimeChannel | null>(null);
 
   const supabase = createClient();
 
@@ -37,14 +35,13 @@ export default function PlayerLobby() {
       activeChannel.on(
         'broadcast',
         { event: 'game:start' },
-        (payload) => {
+        () => {
           // Host started game, redirect player to game view
           router.push(`/play/game/${pin}`);
         }
       );
 
       activeChannel.subscribe();
-      setChannel(activeChannel);
       setLoading(false);
     };
 

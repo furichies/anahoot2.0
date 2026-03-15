@@ -26,7 +26,13 @@ export async function GET() {
 
     const gradesMap = new Map();
 
-    answers.forEach((ans: { is_correct: boolean; points_earned: number; profiles: { id: string; username: string; email: string; } }) => {
+    const typedAnswers = answers as unknown as Array<{
+      is_correct: boolean;
+      points_earned: number;
+      profiles: { id: string; username: string; email: string; };
+    }>;
+
+    typedAnswers.forEach((ans) => {
       const studentId = ans.profiles.id;
       if (!gradesMap.has(studentId)) {
         gradesMap.set(studentId, {

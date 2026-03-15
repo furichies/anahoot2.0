@@ -22,7 +22,6 @@ export default function PlayerGame() {
   const { status, updateRoomState } = useGameStore();
 
   const supabase = createClient();
-  const [channel, setChannel] = useState<RealtimeChannel | null>(null);
 
   useEffect(() => {
     let activeChannel: RealtimeChannel;
@@ -77,7 +76,6 @@ export default function PlayerGame() {
       });
 
       activeChannel.subscribe();
-      setChannel(activeChannel);
       setLoading(false);
     };
 

@@ -16,7 +16,7 @@ interface Question {
 export default function HostDashboard({ initialQuestions }: { initialQuestions: Question[] }) {
   const router = useRouter();
   const [isCreatingRoom, setIsCreatingRoom] = useState(false);
-  const [questions, setQuestions] = useState(initialQuestions);
+  const [questions] = useState(initialQuestions);
 
   const handleCreateRoom = async () => {
     if (questions.length === 0) {
@@ -35,8 +35,9 @@ export default function HostDashboard({ initialQuestions }: { initialQuestions: 
       if (!response.ok) throw new Error(data.error || 'Error al crear la sala');
       
       router.push(`/host/lobby/${data.room_id}`);
-    } catch (error: any) {
-      alert(error.message);
+    } catch (error: unknown) {
+      const msg = error instanceof Error ? error.message : 'Error al crear la sala';
+      alert(msg);
       setIsCreatingRoom(false);
     }
   };

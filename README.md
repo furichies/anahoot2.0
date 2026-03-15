@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎓 ANAHOOT V2.0
 
-## Getting Started
+**ANAHOOT V2.0** es una plataforma de aprendizaje interactivo y síncrono en tiempo real, inspirada en populares herramientas educativas como *Kahoot!*.
 
-First, run the development server:
+## 🎯 Finalidad de la Aplicación
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+El objetivo principal de ANAHOOT es dinamizar el aprendizaje en el aula (o en entornos remotos). Permite a los **Profesores (Hosts)** crear salas virtuales, cargar baterías de preguntas y dirigir el ritmo de una partida en la que los **Alumnos (Players)** compiten simultáneamente respondiendo desde sus propios dispositivos móviles o computadoras.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A diferencia de su versión anterior (que era asíncrona e individual), la versión 2.0 se enfoca en la **experiencia multijugador síncrona**, fomentando la competencia sana y el compromiso del estudiante a través de respuestas en tiempo real, puntuaciones inmediatas y retroalimentación visual.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Tecnologías y Arquitectura
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Este proyecto cuenta con una arquitectura moderna y escalable dividida en dos pilares principales:
 
-## Learn More
+1. **Frontend (Vercel):** La interfaz visual (para profesores y alumnos) está construida íntegramente con **Next.js 15** (App Router) y **TailwindCSS**. Se recomienda encarecidamente **Vercel** como la plataforma de alojamiento (hosting) por excelencia para este front-end, ya que ofrece un despliegue optimizado y sin fricciones para proyectos Next.js.
+   
+2. **Backend (Supabase):** En lugar de un servidor backend tradicional, ANAHOOT V2.0 utiliza **Supabase** (el ecosistema open-source basado en PostgreSQL). Supabase se encarga de:
+   * **Base de datos:** Almacenamiento seguro de preguntas, partidas, usuarios y notas mediante tablas PostgreSQL.
+   * **Autenticación:** Gestión segura del registro y login de profesores y alumnos.
+   * **Tiempo Real (WebSockets):** Sincronización instantánea del estado de la partida entre el profesor y todos los alumnos conectados gracias a Supabase Realtime (Presence & Broadcasts).
 
-To learn more about Next.js, take a look at the following resources:
+## 📝 Licencia
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Este proyecto se distribuye bajo la licencia **GNU General Public License v3.0 (GPLv3)**.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Esto significa que eres libre de usar, modificar y distribuir el software, siempre y cuando cualquier trabajo derivado mantenga la misma licencia GPLv3, asegurando así que el proyecto y sus modificaciones permanezcan libres y abiertos para la comunidad.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Desarrollado para potenciar la educación mediante la tecnología de forma libre y accesible.*

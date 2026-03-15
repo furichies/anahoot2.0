@@ -53,7 +53,10 @@ export default function HostLobby() {
         .eq('room_id', pin);
 
       if (playersData) {
-        setPlayers(playersData.map((p: { profiles: { id: string; username: string; avatar: string } }) => ({
+        const typedPlayers = playersData as unknown as Array<{
+           profiles: { id: string; username: string; avatar: string };
+        }>;
+        setPlayers(typedPlayers.map((p) => ({
           id: p.profiles.id,
           username: p.profiles.username,
           avatar: p.profiles.avatar,
