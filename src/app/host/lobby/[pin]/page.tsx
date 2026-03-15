@@ -19,9 +19,9 @@ export default function HostLobby() {
 
   useEffect(() => {
     let activeChannel: RealtimeChannel;
+    let pollInterval: NodeJS.Timeout;
 
     const setupLobby = async () => {
-      // 1. Verify room exists and belongs to host
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) return router.push('/auth');
 
@@ -39,7 +39,6 @@ export default function HostLobby() {
 
       setRoom(room.id, true);
 
-      // Function to fetch and update all players
       const fetchPlayers = async () => {
         const { data: playersData } = await supabase
           .from('room_players')
@@ -66,22 +65,19 @@ export default function HostLobby() {
         }
       };
 
-      // 2. Load initially
       await fetchPlayers();
       setLoading(false);
 
-      // 3. Setup Supabase Realtime
-      activeChannel = supabase.channel(`room:${pin}`);
+      // Robust Polling fallback (1.5s) to guarantee updates
+      pollInterval = setInterval(fetchPlayers, 1500);
 
-      // Listen for ANY changes to room_players for this room
+      // Supabase Realtime
+      activeChannel = supabase.channel(`room:${pin}`);
       activeChannel.on(
         'postgres_changes',
         { event: '*', schema: 'public', table: 'room_players', filter: `room_id=eq.${pin}` },
-        () => {
-           fetchPlayers();
-        }
+        () => fetchPlayers()
       );
-
       activeChannel.subscribe();
       setChannel(activeChannel);
     };
@@ -90,6 +86,7 @@ export default function HostLobby() {
 
     return () => {
       if (activeChannel) supabase.removeChannel(activeChannel);
+      if (pollInterval) clearInterval(pollInterval);
     };
   }, [pin, router, supabase, setRoom]);
 
@@ -103,6 +100,9 @@ export default function HostLobby() {
       .from('rooms')
       .update({ status: 'playing', current_question_index: 0 })
       .eq('id', pin);
+
+    // Update Local Store to ensure game screen knows we are playing
+    useGameStore.getState().updateRoomState({ status: 'playing', currentQuestionIndex: 0 });
 
     // Broadcast event
     if (channel) {

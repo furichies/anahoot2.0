@@ -52,7 +52,7 @@ export default function HostGame() {
 
   useEffect(() => {
     let activeChannel: RealtimeChannel;
-    let timer: NodeJS.Timeout | undefined;
+    let pollInterval: NodeJS.Timeout;
 
     const setupGame = async () => {
       // 1. Fetch questions
@@ -66,27 +66,43 @@ export default function HostGame() {
         updateRoomState({ totalQuestions: qData.length });
       }
 
-      // 2. Setup Realtime for answers
+      // 2. Initial Answers Count Function
+      const fetchAnswers = async () => {
+        if (!qData || qData.length === 0) return;
+        const currentQIndex = useGameStore.getState().currentQuestionIndex;
+        const { count } = await supabase
+          .from('answers')
+          .select('*', { count: 'exact', head: true })
+          .eq('room_id', pin)
+          .eq('question_id', qData[currentQIndex].id);
+          
+        if (count !== null) setAnswersCount(count);
+      };
+
+      await fetchAnswers();
+      setLoading(false);
+
+      // 3. Polling Answers Fallback
+      pollInterval = setInterval(fetchAnswers, 1500);
+
+      // 4. Setup Realtime for answers
       activeChannel = supabase.channel(`room:${pin}`);
       
       activeChannel.on(
         'postgres_changes',
         { event: 'INSERT', schema: 'public', table: 'answers', filter: `room_id=eq.${pin}` },
-        () => {
-          setAnswersCount(prev => prev + 1);
-        }
+        () => fetchAnswers()
       );
 
       activeChannel.subscribe();
       setChannel(activeChannel);
-      setLoading(false);
     };
 
     setupGame();
 
     return () => {
       if (activeChannel) supabase.removeChannel(activeChannel);
-      if (timer) clearInterval(timer);
+      if (pollInterval) clearInterval(pollInterval);
     };
   }, [pin, supabase, updateRoomState]);
 
@@ -161,17 +177,17 @@ export default function HostGame() {
       <div className="flex-1 bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col border border-purple-100">
         
         {/* Question Area (Top) */}
-        <div className="w-full p-8 md:p-12 flex flex-col items-center justify-center text-center bg-purple-50">
-          <h1 className="text-3xl md:text-5xl font-bold text-purple-950 mb-6 leading-tight">
+        <div className="w-full p-6 md:p-8 flex flex-col items-center justify-center text-center bg-purple-50">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-purple-950 mb-4 leading-tight max-w-5xl">
             {currentQ.text}
           </h1>
           {currentQ.image && (
-             <img src={currentQ.image} alt="Question" className="max-h-64 object-contain rounded-xl shadow-md border border-purple-200 mt-4" />
+             <img src={currentQ.image} alt="Question" className="max-h-48 object-contain rounded-xl shadow-md border border-purple-200 mt-2" />
           )}
         </div>
 
         {/* Options Area (Bottom) */}
-        <div className="w-full flex-1 p-6 md:p-8 grid grid-cols-1 sm:grid-cols-2 gap-4 bg-white">
+        <div className="w-full flex-1 p-4 md:p-6 grid grid-cols-1 sm:grid-cols-2 gap-3 bg-white min-h-[250px] lg:min-h-[300px]">
             <OptionCard color="bg-pink-500" letter="A" text={currentQ.option_a} isCorrect={status === 'showing_stats' && currentQ.correct_answer === 'A'} showResult={status === 'showing_stats'} />
             <OptionCard color="bg-blue-500" letter="B" text={currentQ.option_b} isCorrect={status === 'showing_stats' && currentQ.correct_answer === 'B'} showResult={status === 'showing_stats'} />
             <OptionCard color="bg-yellow-500" letter="C" text={currentQ.option_c} isCorrect={status === 'showing_stats' && currentQ.correct_answer === 'C'} showResult={status === 'showing_stats'} />
