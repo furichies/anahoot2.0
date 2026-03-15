@@ -12,7 +12,7 @@ export default function HostLobby() {
   const { pin } = useParams();
   const router = useRouter();
   const [loading, setLoading] = useState(true);
-  const { players, setPlayers, setRoom } = useGameStore();
+  const { players, setRoom } = useGameStore();
   const [channel, setChannel] = useState<RealtimeChannel | null>(null);
 
   const supabase = createClient();
@@ -39,62 +39,46 @@ export default function HostLobby() {
 
       setRoom(room.id, true);
 
-      // 2. Load existing players
-      const { data: playersData } = await supabase
-        .from('room_players')
-        .select(`
-          player_id,
-          profiles (
-            id,
-            username,
-            avatar
-          )
-        `)
-        .eq('room_id', pin);
+      // Function to fetch and update all players
+      const fetchPlayers = async () => {
+        const { data: playersData } = await supabase
+          .from('room_players')
+          .select(`
+            player_id,
+            profiles (
+              id,
+              username,
+              avatar
+            )
+          `)
+          .eq('room_id', pin);
 
-      if (playersData) {
-        const typedPlayers = playersData as unknown as Array<{
-           profiles: { id: string; username: string; avatar: string };
-        }>;
-        setPlayers(typedPlayers.map((p) => ({
-          id: p.profiles.id,
-          username: p.profiles.username,
-          avatar: p.profiles.avatar,
-          score: 0
-        })));
-      }
+        if (playersData) {
+          const typedPlayers = playersData as unknown as Array<{
+             profiles: { id: string; username: string; avatar: string };
+          }>;
+          useGameStore.getState().setPlayers(typedPlayers.map((p) => ({
+            id: p.profiles.id,
+            username: p.profiles.username,
+            avatar: p.profiles.avatar,
+            score: 0
+          })));
+        }
+      };
 
+      // 2. Load initially
+      await fetchPlayers();
       setLoading(false);
 
-      // 3. Setup Supabase Realtime for Presence and Inserts
-      activeChannel = supabase.channel(`room:${pin}`, {
-        config: {
-          presence: {
-            key: user.id,
-          },
-        },
-      });
+      // 3. Setup Supabase Realtime
+      activeChannel = supabase.channel(`room:${pin}`);
 
-      // Listen for new players joining via DB inserts
+      // Listen for ANY changes to room_players for this room
       activeChannel.on(
         'postgres_changes',
-        { event: 'INSERT', schema: 'public', table: 'room_players', filter: `room_id=eq.${pin}` },
-        async (payload) => {
-          // Fetch the full profile of the new player
-          const { data: newProfile } = await supabase
-            .from('profiles')
-            .select('*')
-            .eq('id', payload.new.player_id)
-            .single();
-
-          if (newProfile) {
-            useGameStore.getState().addPlayer({
-              id: newProfile.id,
-              username: newProfile.username,
-              avatar: newProfile.avatar,
-              score: 0
-            });
-          }
+        { event: '*', schema: 'public', table: 'room_players', filter: `room_id=eq.${pin}` },
+        () => {
+           fetchPlayers();
         }
       );
 
@@ -107,7 +91,7 @@ export default function HostLobby() {
     return () => {
       if (activeChannel) supabase.removeChannel(activeChannel);
     };
-  }, [pin, router, supabase, setRoom, setPlayers]);
+  }, [pin, router, supabase, setRoom]);
 
   const handleStartGame = async () => {
     if (players.length === 0) {

@@ -93,14 +93,16 @@ export default function HostGame() {
   // Timer logic for 'playing' status
   useEffect(() => {
     let timer: NodeJS.Timeout;
-    if (status === 'playing' && timeLeft > 0 && answersCount < players.length) {
-      timer = setInterval(() => {
-        setTimeLeft(prev => prev - 1);
-      }, 1000);
-    } else if (status === 'playing' && (timeLeft === 0 || answersCount >= players.length)) {
+    if (status === 'playing' && answersCount < players.length) {
+      if (timeLeft > 0) {
+        timer = setTimeout(() => setTimeLeft(prev => prev - 1), 1000);
+      } else {
+        handleTimeUp();
+      }
+    } else if (status === 'playing' && answersCount >= players.length) {
       handleTimeUp();
     }
-    return () => clearInterval(timer);
+    return () => clearTimeout(timer);
   }, [status, timeLeft, answersCount, players.length, handleTimeUp]);
 
   const handleNextQuestion = async () => {
@@ -148,26 +150,28 @@ export default function HostGame() {
             <Users className="w-5 h-5" />
             Respuestas: {answersCount} / {players.length}
           </div>
-          <div className="text-4xl font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-red-500 w-20 text-center">
-            {timeLeft}
+          <div className="flex items-center justify-center bg-white border-4 border-purple-200 rounded-full w-20 h-20 shadow-lg">
+            <span className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-br from-purple-600 to-pink-600">
+              {timeLeft}
+            </span>
           </div>
         </div>
       </div>
 
-      <div className="flex-1 bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row border border-purple-100">
+      <div className="flex-1 bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col border border-purple-100">
         
-        {/* Question Area */}
-        <div className="flex-1 p-8 md:p-12 flex flex-col items-center justify-center text-center bg-purple-50">
-          <h1 className="text-3xl md:text-5xl font-bold text-purple-950 mb-8 leading-tight">
+        {/* Question Area (Top) */}
+        <div className="w-full p-8 md:p-12 flex flex-col items-center justify-center text-center bg-purple-50">
+          <h1 className="text-3xl md:text-5xl font-bold text-purple-950 mb-6 leading-tight">
             {currentQ.text}
           </h1>
           {currentQ.image && (
-             <img src={currentQ.image} alt="Question" className="max-h-64 object-contain rounded-xl shadow-md border border-purple-200" />
+             <img src={currentQ.image} alt="Question" className="max-h-64 object-contain rounded-xl shadow-md border border-purple-200 mt-4" />
           )}
         </div>
 
-        {/* Options Area */}
-        <div className="w-full md:w-1/2 p-6 md:p-8 grid grid-cols-1 sm:grid-cols-2 gap-4 bg-white">
+        {/* Options Area (Bottom) */}
+        <div className="w-full flex-1 p-6 md:p-8 grid grid-cols-1 sm:grid-cols-2 gap-4 bg-white">
             <OptionCard color="bg-pink-500" letter="A" text={currentQ.option_a} isCorrect={status === 'showing_stats' && currentQ.correct_answer === 'A'} showResult={status === 'showing_stats'} />
             <OptionCard color="bg-blue-500" letter="B" text={currentQ.option_b} isCorrect={status === 'showing_stats' && currentQ.correct_answer === 'B'} showResult={status === 'showing_stats'} />
             <OptionCard color="bg-yellow-500" letter="C" text={currentQ.option_c} isCorrect={status === 'showing_stats' && currentQ.correct_answer === 'C'} showResult={status === 'showing_stats'} />
