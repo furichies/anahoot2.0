@@ -201,12 +201,12 @@ export default function HostGame() {
       <div className="flex-1 bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col border border-purple-100">
         
         {/* Question Area (Top) */}
-        <div className="w-full p-4 md:p-6 flex flex-col items-center justify-center text-center bg-purple-50">
-          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-purple-950 mb-2 leading-tight max-w-5xl">
+        <div className="w-full p-4 md:p-6 flex flex-col items-center justify-center text-center bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-950 shadow-inner">
+          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2 leading-tight max-w-5xl drop-shadow-md">
             {currentQ.text}
           </h1>
           {currentQ.image && (
-             <img src={currentQ.image} alt="Question" className="max-h-40 object-contain rounded-xl shadow-md border border-purple-200 mt-2" />
+             <img src={currentQ.image} alt="Question" className="max-h-40 object-contain rounded-xl shadow-2xl border border-white/20 mt-2 bg-white/5 p-1" />
           )}
         </div>
 
