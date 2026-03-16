@@ -9,9 +9,17 @@ export async function DELETE(
     const { id } = await params;
     
     // We need the service role key to delete users from Auth
+    const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    if (!serviceRoleKey) {
+      return NextResponse.json(
+        { error: 'Para eliminar alumnos, necesitas obtener tu "Service Role Key" (secret) de Supabase (Project Settings -> API) y añadirlo como SUPABASE_SERVICE_ROLE_KEY en tu archivo .env.local' },
+        { status: 400 }
+      );
+    }
+
     const supabaseAdmin = createClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.SUPABASE_SERVICE_ROLE_KEY!
+      serviceRoleKey
     );
 
     // 1. Delete from auth.users (this also deletes from profiles if there is a trigger or if we do it manually)
