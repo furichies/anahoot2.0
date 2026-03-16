@@ -35,14 +35,16 @@ export async function GET() {
       total_points: number;
     }>();
 
-    (answers as {room_id: string, is_correct: boolean, points_earned: number, profiles: {id: string, username: string, email: string}}[]).forEach((ans) => {
-      const key = `${ans.room_id}-${ans.profiles.id}`;
+    (answers as {room_id: string, is_correct: boolean, points_earned: number, profiles: {id: string, username: string, email: string}[]}[]).forEach((ans) => {
+      const profile = ans.profiles?.[0];
+      if (!profile) return;
+      const key = `${ans.room_id}-${profile.id}`;
       if (!grouping.has(key)) {
         grouping.set(key, {
           room_id: ans.room_id,
-          id: ans.profiles.id,
-          username: ans.profiles.username,
-          email: ans.profiles.email,
+          id: profile.id,
+          username: profile.username,
+          email: profile.email,
           total_questions: 0,
           correct_answers: 0,
           total_points: 0

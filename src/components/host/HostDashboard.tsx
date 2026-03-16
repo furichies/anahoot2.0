@@ -243,7 +243,7 @@ export default function HostDashboard({ initialQuestions }: { initialQuestions: 
                     body: JSON.stringify({ questions: json })
                   });
                   if (res.ok) { window.location.reload(); } else { alert('Error al subir'); }
-                } catch (err) { alert('Formato inválido'); }
+                } catch { alert('Formato inválido'); }
               }} />
             </div>
           </div>
@@ -428,7 +428,7 @@ export default function HostDashboard({ initialQuestions }: { initialQuestions: 
                        });
                        doc.save('reporte_calificaciones_anahoot.pdf');
                     }
-                  } catch (e) { alert('Error al generar PDF'); }
+                  } catch { alert('Error al generar PDF'); }
                }}>
                  Generar Reporte PDF Final
                </Button>
