@@ -8,11 +8,11 @@ export async function GET() {
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) return NextResponse.json({ error: 'No autorizado' }, { status: 401 });
 
-    // Fetch grades aggregated. 
-    // Usually done via SQL view/function, but for simplicity we aggregate here.
+    // Fetch grades aggregated by room and profile.
     const { data: answers, error } = await supabase
       .from('answers')
       .select(`
+        room_id,
         is_correct,
         points_earned,
         profiles (
@@ -24,19 +24,23 @@ export async function GET() {
 
     if (error) throw error;
 
-    const gradesMap = new Map();
+    // Grouping by student AND room to show historical records
+    const grouping = new Map<string, {
+      room_id: string;
+      id: string;
+      username: string;
+      email: string;
+      total_questions: number;
+      correct_answers: number;
+      total_points: number;
+    }>();
 
-    const typedAnswers = answers as unknown as Array<{
-      is_correct: boolean;
-      points_earned: number;
-      profiles: { id: string; username: string; email: string; };
-    }>;
-
-    typedAnswers.forEach((ans) => {
-      const studentId = ans.profiles.id;
-      if (!gradesMap.has(studentId)) {
-        gradesMap.set(studentId, {
-          id: studentId,
+    (answers as {room_id: string, is_correct: boolean, points_earned: number, profiles: {id: string, username: string, email: string}}[]).forEach((ans) => {
+      const key = `${ans.room_id}-${ans.profiles.id}`;
+      if (!grouping.has(key)) {
+        grouping.set(key, {
+          room_id: ans.room_id,
+          id: ans.profiles.id,
           username: ans.profiles.username,
           email: ans.profiles.email,
           total_questions: 0,
@@ -45,19 +49,21 @@ export async function GET() {
         });
       }
       
-      const student = gradesMap.get(studentId);
-      student.total_questions += 1;
-      if (ans.is_correct) student.correct_answers += 1;
-      student.total_points += ans.points_earned;
+      const entry = grouping.get(key)!;
+      entry.total_questions += 1;
+      if (ans.is_correct) entry.correct_answers += 1;
+      entry.total_points += ans.points_earned;
     });
 
-    const grades = Array.from(gradesMap.values()).map(student => ({
-      ...student,
-      // Base /10 note assuming out of their total answers
-      grade_10: student.total_questions > 0 
-        ? ((student.correct_answers / student.total_questions) * 10).toFixed(2) 
+    const grades = Array.from(grouping.values()).map(entry => ({
+      ...entry,
+      grade_10: entry.total_questions > 0 
+        ? ((entry.correct_answers / entry.total_questions) * 10).toFixed(2) 
         : "0.00"
     }));
+
+    // Sort by room_id descending (newest first)
+    grades.sort((a, b) => b.room_id.localeCompare(a.room_id));
 
     return NextResponse.json(grades);
   } catch (error: unknown) {
