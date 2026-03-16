@@ -31,7 +31,35 @@ export default function PlayerGame() {
       if (!user) return router.push('/auth');
       setUserId(user.id);
 
-      // Listen for broadcasts from Host
+      // 1. Fetch current room state to avoid F5 desync
+      const { data: room } = await supabase.from('rooms').select('status, current_question_index').eq('id', pin).single();
+      const { data: qData } = await supabase.from('questions').select('id').order('id', { ascending: true });
+      
+      if (room && qData && qData.length > 0) {
+        updateRoomState({ status: room.status, currentQuestionIndex: room.current_question_index, totalQuestions: qData.length });
+        
+        // Check if player already answered the current question
+        const currentQId = qData[room.current_question_index]?.id;
+        if (currentQId) {
+          const { data: existingAnswer } = await supabase
+            .from('answers')
+            .select('is_correct, points_earned, selected_option')
+            .eq('room_id', pin)
+            .eq('player_id', user.id)
+            .eq('question_id', currentQId)
+            .maybeSingle();
+
+          if (existingAnswer) {
+            setSelectedAnswer(existingAnswer.selected_option);
+            if (room.status === 'showing_stats') {
+              setIsCorrect(existingAnswer.is_correct);
+              setPointsEarned(existingAnswer.points_earned);
+            }
+          }
+        }
+      }
+
+      // 2. Listen for broadcasts from Host
       activeChannel = supabase.channel(`room:${pin}`);
       
       activeChannel.on('broadcast', { event: 'game:next_question' }, (payload) => {
@@ -44,8 +72,8 @@ export default function PlayerGame() {
       activeChannel.on('broadcast', { event: 'game:show_stats' }, async () => {
         updateRoomState({ status: 'showing_stats' });
         
-        // Fetch result for current player
-        if (selectedAnswer) {
+        if (selectedAnswer || document.querySelector('.bg-white\\/20')) {
+            // Re-fetch safely to get exactly what was scored
             const { data: answer } = await supabase
               .from('answers')
               .select('is_correct, points_earned')
@@ -53,7 +81,7 @@ export default function PlayerGame() {
               .eq('player_id', user.id)
               .order('created_at', { ascending: false })
               .limit(1)
-              .single();
+              .maybeSingle();
               
             if (answer) {
                setIsCorrect(answer.is_correct);
@@ -91,42 +119,43 @@ export default function PlayerGame() {
     
     setSelectedAnswer(option);
     
-    // We fetch the current question ID from rooms table to insert answer properly
-    const { data: room } = await supabase.from('rooms').select('current_question_index').eq('id', pin).single();
-    const { data: qData } = await supabase.from('questions').select('id').order('id', { ascending: true });
-    
-    if (room && qData && qData[room.current_question_index]) {
-      const questionId = qData[room.current_question_index].id;
+    try {
+      const { data: room } = await supabase.from('rooms').select('current_question_index').eq('id', pin).single();
+      const { data: qData } = await supabase.from('questions').select('id, correct_answer').order('id', { ascending: true });
       
-      // Calculate points locally based on time (simple version: could be driven by DB trigger too)
-      // We will insert the answer. The RLS allows players to insert.
-      // Note: is_correct and points_earned would ideally be calculated securely server-side,
-      // but for V2.0 rapid implementation, we calculate them via a DB trigger or we fetch the correct answer.
-      // Easiest is to fetch the correct answer here using an RPC or just let an edge function do it.
-      // Because `questions` RLS is public select, we can check it:
-      const { data: question } = await supabase.from('questions').select('correct_answer').eq('id', questionId).single();
-      
-      const correct = question?.correct_answer === option;
-      const points = correct ? 1000 : 0; // Simplified points
-      
-      await supabase.from('answers').insert({
-        room_id: pin,
-        question_id: questionId,
-        player_id: userId,
-        selected_option: option,
-        is_correct: correct,
-        points_earned: points,
-        time_spent: 0 // Simplification
-      });
-      
-      // Update room_players score
-      if (correct) {
-         // Getting current score and adding to it
-         const { data: rp } = await supabase.from('room_players').select('score').eq('room_id', pin).eq('player_id', userId).single();
-         if (rp) {
-            await supabase.from('room_players').update({ score: rp.score + points }).eq('room_id', pin).eq('player_id', userId);
-         }
+      if (room && qData && qData[room.current_question_index]) {
+        const questionId = qData[room.current_question_index].id;
+        const correct = qData[room.current_question_index].correct_answer === option;
+        const points = correct ? 1000 : 0; 
+        
+        const { error: insertError } = await supabase.from('answers').insert({
+          room_id: pin,
+          question_id: questionId,
+          player_id: userId,
+          selected_option: option,
+          is_correct: correct,
+          points_earned: points,
+          time_spent: 0
+        });
+        
+        if (insertError) {
+           console.error('Error insertando respuesta:', insertError);
+           alert('Hubo un problema de conexión al enviar. Intenta de nuevo rápidamente.');
+           setSelectedAnswer(null);
+           return;
+        }
+
+        if (correct) {
+           const { data: rp } = await supabase.from('room_players').select('score').eq('room_id', pin).eq('player_id', userId).single();
+           if (rp) {
+              await supabase.from('room_players').update({ score: rp.score + points }).eq('room_id', pin).eq('player_id', userId);
+           }
+        }
       }
+    } catch (e) {
+      console.error(e);
+      setSelectedAnswer(null);
+      alert('Error de red. Intenta enviar de nuevo.');
     }
   };
 
@@ -176,7 +205,16 @@ export default function PlayerGame() {
   }
 
   return (
-    <div className="w-full flex-1 flex flex-col max-w-md mx-auto">
+    <div className="w-full flex-1 flex flex-col max-w-md mx-auto relative pt-16">
+       {/* Top fixed header with question number */}
+       {status === 'playing' && (
+         <div className="absolute top-0 inset-x-0 h-14 bg-black/20 rounded-b-3xl flex items-center justify-center border-b border-white/10 backdrop-blur-md">
+           <h2 className="text-xl font-bold text-white shadow-sm">
+             Pregunta {useGameStore.getState().currentQuestionIndex + 1}
+           </h2>
+         </div>
+       )}
+
        {selectedAnswer ? (
           <div className="flex-1 flex flex-col items-center justify-center text-white">
              <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mb-6 animate-pulse shadow-lg ring-4 ring-white/10">

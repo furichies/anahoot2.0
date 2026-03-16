@@ -66,6 +66,21 @@ export default function HostGame() {
         updateRoomState({ totalQuestions: qData.length });
       }
 
+      // 1.5. Fetch players to restore Zustand state on refresh
+      const fetchPlayers = async () => {
+        const { data: playersData } = await supabase
+          .from('room_players')
+          .select(`player_id, profiles (id, username, avatar)`)
+          .eq('room_id', pin);
+        if (playersData) {
+          const typedPlayers = playersData as unknown as Array<{ profiles: { id: string; username: string; avatar: string } }>;
+          useGameStore.getState().setPlayers(typedPlayers.map(p => ({
+            id: p.profiles.id, username: p.profiles.username, avatar: p.profiles.avatar, score: 0
+          })));
+        }
+      };
+      await fetchPlayers();
+
       // 2. Initial Answers Count Function
       const fetchAnswers = async () => {
         if (!qData || qData.length === 0) return;
@@ -109,13 +124,14 @@ export default function HostGame() {
   // Timer logic for 'playing' status
   useEffect(() => {
     let timer: NodeJS.Timeout;
-    if (status === 'playing' && answersCount < players.length) {
+    const currentPlayersCount = Math.max(players.length, 1); // Avoid instant skip if 0 players for some reason
+    if (status === 'playing' && answersCount < currentPlayersCount) {
       if (timeLeft > 0) {
         timer = setTimeout(() => setTimeLeft(prev => prev - 1), 1000);
       } else {
         handleTimeUp();
       }
-    } else if (status === 'playing' && answersCount >= players.length) {
+    } else if (status === 'playing' && answersCount >= currentPlayersCount) {
       handleTimeUp();
     }
     return () => clearTimeout(timer);
