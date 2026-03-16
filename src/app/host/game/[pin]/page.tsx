@@ -157,8 +157,8 @@ export default function HostGame() {
 
   return (
     <div className="flex-1 max-w-7xl mx-auto w-full p-4 md:p-8 flex flex-col">
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-bold text-purple-900">
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="text-xl md:text-2xl font-bold text-purple-900">
           Pregunta {currentQuestionIndex + 1} de {questions.length}
         </h2>
         <div className="flex items-center gap-4">
@@ -166,28 +166,36 @@ export default function HostGame() {
             <Users className="w-5 h-5" />
             Respuestas: {answersCount} / {players.length}
           </div>
-          <div className="flex items-center justify-center bg-white border-4 border-purple-200 rounded-full w-20 h-20 shadow-lg">
-            <span className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-br from-purple-600 to-pink-600">
+          <div className="flex items-center justify-center bg-white border-4 border-purple-200 rounded-full w-16 h-16 md:w-20 md:h-20 shadow-lg">
+            <span className="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-br from-purple-600 to-pink-600">
               {timeLeft}
             </span>
           </div>
         </div>
       </div>
 
+      {/* Progress bar */}
+      <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden mb-6 shadow-inner">
+        <div 
+          className="h-full bg-gradient-to-r from-yellow-400 to-red-500 transition-all duration-1000 ease-linear"
+          style={{ width: `${(timeLeft / 20) * 100}%` }}
+        />
+      </div>
+
       <div className="flex-1 bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col border border-purple-100">
         
         {/* Question Area (Top) */}
-        <div className="w-full p-6 md:p-8 flex flex-col items-center justify-center text-center bg-purple-50">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-purple-950 mb-4 leading-tight max-w-5xl">
+        <div className="w-full p-4 md:p-6 flex flex-col items-center justify-center text-center bg-purple-50">
+          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-purple-950 mb-2 leading-tight max-w-5xl">
             {currentQ.text}
           </h1>
           {currentQ.image && (
-             <img src={currentQ.image} alt="Question" className="max-h-48 object-contain rounded-xl shadow-md border border-purple-200 mt-2" />
+             <img src={currentQ.image} alt="Question" className="max-h-40 object-contain rounded-xl shadow-md border border-purple-200 mt-2" />
           )}
         </div>
 
         {/* Options Area (Bottom) */}
-        <div className="w-full flex-1 p-4 md:p-6 grid grid-cols-1 sm:grid-cols-2 gap-3 bg-white min-h-[250px] lg:min-h-[300px]">
+        <div className="w-full flex-1 p-3 md:p-5 grid grid-cols-1 sm:grid-cols-2 gap-3 bg-white min-h-[150px] lg:min-h-[200px]">
             <OptionCard color="bg-pink-500" letter="A" text={currentQ.option_a} isCorrect={status === 'showing_stats' && currentQ.correct_answer === 'A'} showResult={status === 'showing_stats'} />
             <OptionCard color="bg-blue-500" letter="B" text={currentQ.option_b} isCorrect={status === 'showing_stats' && currentQ.correct_answer === 'B'} showResult={status === 'showing_stats'} />
             <OptionCard color="bg-yellow-500" letter="C" text={currentQ.option_c} isCorrect={status === 'showing_stats' && currentQ.correct_answer === 'C'} showResult={status === 'showing_stats'} />
@@ -230,15 +238,15 @@ export default function HostGame() {
 function OptionCard({ color, letter, text, isCorrect, showResult }: { color: string, letter: string, text: string, isCorrect: boolean, showResult: boolean }) {
   return (
     <div className={`
-      relative rounded-2xl p-6 flex flex-col justify-center shadow-md transition-all duration-300
+      relative rounded-xl p-4 flex flex-col justify-center shadow-md transition-all duration-300
       ${showResult && !isCorrect ? 'opacity-30 grayscale' : 'opacity-100 scale-100'}
       ${showResult && isCorrect ? 'ring-8 ring-green-400 scale-105 z-10' : ''}
       ${color}
     `}>
-      <span className="absolute top-4 left-4 bg-white/20 text-white font-bold w-10 h-10 rounded-full flex items-center justify-center text-xl">
+      <span className="absolute top-3 left-3 bg-white/20 text-white font-bold w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-lg md:text-xl">
         {letter}
       </span>
-      <span className="text-white font-bold text-xl lg:text-2xl text-center mt-6">
+      <span className="text-white font-bold text-lg lg:text-xl text-center mt-4 px-2">
         {text}
       </span>
     </div>
