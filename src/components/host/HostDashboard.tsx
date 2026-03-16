@@ -17,6 +17,33 @@ export default function HostDashboard({ initialQuestions }: { initialQuestions: 
   const router = useRouter();
   const [isCreatingRoom, setIsCreatingRoom] = useState(false);
   const [questions] = useState(initialQuestions);
+  
+  // State for Grades tab
+  const [grades, setGrades] = useState<{username: string, email: string, correct_answers: number, total_questions: number, grade_10: string}[]>([]);
+  const [loadingGrades, setLoadingGrades] = useState(false);
+
+  const fetchGrades = async () => {
+    setLoadingGrades(true);
+    try {
+      const res = await fetch('/api/grades');
+      const data = await res.json();
+      if (res.ok) {
+        setGrades(data);
+      } else {
+        alert(data.error);
+      }
+    } catch (e: unknown) {
+      const msg = e instanceof Error ? e.message : 'Unknown error';
+      alert(msg);
+    }
+    setLoadingGrades(false);
+  };
+
+  // Load grades when tab changes to 'alumnos' or initially if needed, but we rely on the button or simple effect.
+  // Instead of an effect, we just have the button for now as requested, but let's load them on mount just in case.
+  React.useEffect(() => {
+    fetchGrades();
+  }, []);
 
   const handleCreateRoom = async () => {
     if (questions.length === 0) {
@@ -151,30 +178,84 @@ export default function HostDashboard({ initialQuestions }: { initialQuestions: 
 
       <TabsContent value="alumnos">
         <Card className="border-purple-100 shadow-md">
-          <CardHeader>
-            <CardTitle className="text-2xl text-purple-900">Rendimiento por Alumno</CardTitle>
-            <CardDescription>Calificaciones calculadas en base a las respuestas correctas sobre el total de preguntas (Base 10).</CardDescription>
+          <CardHeader className="flex flex-row items-center justify-between">
+            <div>
+              <CardTitle className="text-2xl text-purple-900">Rendimiento por Alumno</CardTitle>
+              <CardDescription>Calificaciones de la última sesión (Base 10).</CardDescription>
+            </div>
+            <Button onClick={fetchGrades} variant="outline" size="sm" className="border-purple-200 text-purple-700">
+               {loadingGrades ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : 'Refrescar Notas'}
+            </Button>
           </CardHeader>
           <CardContent>
-             <div className="flex items-center justify-center p-8">
-               <Button onClick={async () => {
-                 try {
-                   const res = await fetch('/api/grades');
-                   const data = await res.json();
-                   if (res.ok) {
-                     console.log(data);
-                     alert(`Se han cargado ${data.length} registros. (Ver consola para detalle / Implementar tabla UI)`);
-                   } else {
-                     alert(data.error);
-                   }
-                 } catch (e: unknown) {
-                   const msg = e instanceof Error ? e.message : 'Unknown error';
-                   alert(msg);
-                 }
-               }}>
-                 Cargar Notas Recientes
-               </Button>
-             </div>
+            {loadingGrades ? (
+              <div className="flex justify-center p-12">
+                 <Loader2 className="w-8 h-8 animate-spin text-purple-500" />
+              </div>
+            ) : grades.length === 0 ? (
+              <div className="text-center p-12 text-gray-400">
+                No hay calificaciones registradas aún.
+              </div>
+            ) : (
+              <div className="space-y-8">
+                {/* Visual Chart (Simple CSS Bars) */}
+                <div className="bg-purple-50 rounded-xl p-6 border border-purple-100">
+                  <h3 className="text-lg font-bold text-purple-900 mb-6">Gráfico de Notas (/10)</h3>
+                  <div className="space-y-4">
+                    {grades.map((g, i) => (
+                      <div key={i} className="flex items-center gap-4">
+                        <div className="w-32 text-sm font-semibold text-purple-800 truncate" title={g.username}>
+                          {g.username}
+                        </div>
+                        <div className="flex-1 h-6 bg-purple-100 rounded-full overflow-hidden relative">
+                           <div 
+                             className={`h-full rounded-full ${parseFloat(g.grade_10) >= 5 ? 'bg-green-500' : 'bg-red-500'}`}
+                             style={{ width: `${(parseFloat(g.grade_10) / 10) * 100}%` }}
+                           />
+                        </div>
+                        <div className="w-12 text-right font-bold text-gray-700">
+                          {g.grade_10}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Data Table */}
+                <div className="overflow-x-auto rounded-xl border border-purple-100 shadow-sm">
+                  <table className="w-full text-sm text-left">
+                    <thead className="bg-purple-100 text-purple-900 font-bold uppercase text-xs">
+                      <tr>
+                        <th className="px-6 py-4">Alumno</th>
+                        <th className="px-6 py-4">Email</th>
+                        <th className="px-6 py-4 text-center">Correctas</th>
+                        <th className="px-6 py-4 text-center">Tasa Acierto</th>
+                        <th className="px-6 py-4 text-right">Nota / 10</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-purple-50 bg-white">
+                      {grades.map((grade, i) => (
+                        <tr key={i} className="hover:bg-purple-50/50 transition-colors">
+                          <td className="px-6 py-4 font-semibold text-gray-900">{grade.username}</td>
+                          <td className="px-6 py-4 text-gray-500">{grade.email}</td>
+                          <td className="px-6 py-4 text-center font-mono">
+                            {grade.correct_answers} / {grade.total_questions}
+                          </td>
+                          <td className="px-6 py-4 text-center">
+                            {Math.round((grade.correct_answers / grade.total_questions) * 100)}%
+                          </td>
+                          <td className="px-6 py-4 text-right">
+                            <span className={`px-3 py-1 rounded-full text-xs font-bold ${parseFloat(grade.grade_10) >= 5 ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                              {grade.grade_10}
+                            </span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
           </CardContent>
         </Card>
       </TabsContent>
