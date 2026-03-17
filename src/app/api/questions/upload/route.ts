@@ -23,8 +23,22 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Formato inválido. Se esperaba un array de preguntas.' }, { status: 400 });
     }
 
-    // First delete existing questions to replace them (as per V1.0 behavior)
-    await supabase.from('questions').delete().neq('id', 0); // Delete all
+    // First check if we can delete questions
+    // Since answers references questions without ON DELETE CASCADE, deleting
+    // questions will fail if there are any answers. 
+    // To allow a clean reload, we should clear the answers table first.
+    const { error: deleteAnswersError } = await supabase.from('answers').delete().neq('id', 0);
+    if (deleteAnswersError) {
+      console.error('Error deleting prior answers:', deleteAnswersError);
+      return NextResponse.json({ error: 'No se pudieron limpiar las respuestas anteriores.' }, { status: 500 });
+    }
+
+    // Now delete existing questions
+    const { error: deleteError } = await supabase.from('questions').delete().neq('id', 0); // Delete all
+    if (deleteError) {
+      console.error('Error deleting prior questions:', deleteError);
+      return NextResponse.json({ error: 'No se pudieron borrar las preguntas anteriores. Asegúrate de que no haya juegos activos.' }, { status: 500 });
+    }
 
     const parsedQuestions = questions.map((q: {
       text: string;
