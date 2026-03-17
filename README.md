@@ -19,6 +19,12 @@ Este proyecto cuenta con una arquitectura moderna y escalable dividida en dos pi
    * **Autenticación:** Gestión segura del registro y login de profesores y alumnos.
    * **Tiempo Real (WebSockets):** Sincronización instantánea del estado de la partida entre el profesor y todos los alumnos conectados gracias a Supabase Realtime (Presence & Broadcasts).
 
+## 📚 Guías y Manuales
+
+Para facilitar la adopción y el uso de la plataforma, disponemos de dos guías detalladas:
+- [**Guía de Instalación (INSTALL)**](./INSTALL.md): Descripción paso a paso de cómo desplegar el proyecto desde cero en GitHub, Supabase y Vercel, orientada a usuarios no técnicos.
+- [**Manual de Uso (MANUAL)**](./MANUAL.md): Guía práctica sobre cómo utilizar el panel de administración, crear partidas, gestionar alumnos y exportar las calificaciones.
+
 ## 📝 Licencia
 
 Este proyecto se distribuye bajo la licencia **GNU General Public License v3.0 (GPLv3)**.
