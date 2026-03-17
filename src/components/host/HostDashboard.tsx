@@ -93,20 +93,18 @@ export default function HostDashboard({ initialQuestions }: { initialQuestions: 
     setIsCreatingStudent(true);
     try {
       // Create user via Supabase Auth (standard signup)
-      // Note: This signs them up but doesn't log the host out because we use the internal client
-      const { error } = await supabase.auth.signUp({
-        email: newStudent.email,
-        password: newStudent.password,
-        options: {
-          data: {
-            username: newStudent.username,
-            role: 'alumno',
-            avatar: '👤'
-          }
-        }
+      const res = await fetch('/api/admin/users', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: newStudent.email,
+          password: newStudent.password,
+          username: newStudent.username
+        })
       });
-
-      if (error) throw error;
+      
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Error al crear alumno');
       alert('Alumno creado con éxito');
       setNewStudent({ email: '', username: '', password: '' });
       fetchStudents();
