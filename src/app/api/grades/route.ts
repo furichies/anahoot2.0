@@ -35,8 +35,9 @@ export async function GET() {
       total_points: number;
     }>();
 
-    (answers as {room_id: string, is_correct: boolean, points_earned: number, profiles: {id: string, username: string, email: string}[]}[]).forEach((ans) => {
-      const profile = ans.profiles?.[0];
+    (answers as {room_id: string, is_correct: boolean, points_earned: number, profiles: {id: string, username: string, email: string} | {id: string, username: string, email: string}[]}[]).forEach((ans) => {
+      // Supabase returns an object for one-to-many joined rows (like answers -> profile via player_id)
+      const profile = Array.isArray(ans.profiles) ? ans.profiles[0] : ans.profiles;
       if (!profile) return;
       const key = `${ans.room_id}-${profile.id}`;
       if (!grouping.has(key)) {
