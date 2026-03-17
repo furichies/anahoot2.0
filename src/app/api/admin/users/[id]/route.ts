@@ -22,23 +22,49 @@ export async function DELETE(
       serviceRoleKey
     );
 
-    // 1. Delete from auth.users (this also deletes from profiles if there is a trigger or if we do it manually)
-    // Actually, in many Supabase setups, deleting from auth.users is the way to go.
+    // We need to clean up references first because the database constraints
+    // (room_players, answers, etc.) might not have ON DELETE CASCADE set
+    // pointing to auth.users or profiles.
+
+    // 1. Delete user's answers
+    const { error: answersError } = await supabaseAdmin
+      .from('answers')
+      .delete()
+      .eq('player_id', id);
+    if (answersError) console.error('Error deleting user answers:', answersError);
+
+    // 2. Delete user's room participations
+    const { error: roomPlayersError } = await supabaseAdmin
+      .from('room_players')
+      .delete()
+      .eq('player_id', id);
+    if (roomPlayersError) console.error('Error deleting user room participations:', roomPlayersError);
+
+    // 3. Delete user's rooms (if they are a host)
+    const { error: roomsError } = await supabaseAdmin
+      .from('rooms')
+      .delete()
+      .eq('host_id', id);
+    if (roomsError) console.error('Error deleting user rooms:', roomsError);
+
+    // 4. Delete profile explicitly (in case auth.users cascade is missing)
+    const { error: profileError } = await supabaseAdmin
+      .from('profiles')
+      .delete()
+      .eq('id', id);
+    if (profileError) console.error('Error deleting profile:', profileError);
+
+    // 5. Delete from auth.users
     const { error: authError } = await supabaseAdmin.auth.admin.deleteUser(id);
     
     if (authError) {
-      // If it fails, maybe it's because the user doesn't exist in Auth but exists in profiles
-      // Let's try to delete from profiles anyway
-      const { error: profileError } = await supabaseAdmin
-        .from('profiles')
-        .delete()
-        .eq('id', id);
-        
-      if (profileError) throw profileError;
+      console.error('Error deleting auth user:', authError);
+      throw authError; // or return error if we want it to fail explicitly
     }
 
     return NextResponse.json({ success: true });
   } catch (error: unknown) {
+    console.error('Delete user error:', error);
     const msg = error instanceof Error ? error.message : 'Unknown error';
     return NextResponse.json({ error: msg }, { status: 500 });
   }
