@@ -112,7 +112,10 @@ export default function PlayerGame() {
     return () => {
       if (activeChannel) supabase.removeChannel(activeChannel);
     };
-  }, [pin, router, supabase, updateRoomState, selectedAnswer]);
+    // Deshabilitamos el lint o quitamos custom states de las dependencias
+    // para no reiniciar la conexión WebSocket (activeChannel) cada vez que el usuario responde.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pin, router, supabase, updateRoomState]);
 
   const handleAnswer = async (option: string) => {
     if (selectedAnswer || status !== 'playing') return;
