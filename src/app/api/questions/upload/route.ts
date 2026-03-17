@@ -23,18 +23,27 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Formato inválido. Se esperaba un array de preguntas.' }, { status: 400 });
     }
 
+    // Import createClient for admin client
+    const { createClient: createAdminClient } = await import('@supabase/supabase-js');
+    
+    // Create an admin client to bypass RLS
+    const adminSupabase = createAdminClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.SUPABASE_SERVICE_ROLE_KEY!
+    );
+
     // First check if we can delete questions
     // Since answers references questions without ON DELETE CASCADE, deleting
     // questions will fail if there are any answers. 
-    // To allow a clean reload, we should clear the answers table first.
-    const { error: deleteAnswersError } = await supabase.from('answers').delete().neq('id', 0);
+    // To allow a clean reload, we should clear the answers table first (bypassing RLS).
+    const { error: deleteAnswersError } = await adminSupabase.from('answers').delete().neq('id', 0);
     if (deleteAnswersError) {
       console.error('Error deleting prior answers:', deleteAnswersError);
       return NextResponse.json({ error: 'No se pudieron limpiar las respuestas anteriores.' }, { status: 500 });
     }
 
-    // Now delete existing questions
-    const { error: deleteError } = await supabase.from('questions').delete().neq('id', 0); // Delete all
+    // Now delete existing questions (bypassing RLS)
+    const { error: deleteError } = await adminSupabase.from('questions').delete().neq('id', 0); // Delete all
     if (deleteError) {
       console.error('Error deleting prior questions:', deleteError);
       return NextResponse.json({ error: 'No se pudieron borrar las preguntas anteriores. Asegúrate de que no haya juegos activos.' }, { status: 500 });
