@@ -1,0 +1,197 @@
+[
+  {
+    "text": "¿Cómo se define el proceso metabólico de degradación de moléculas complejas en otras más simples con liberación de energía?",
+    "image": null,
+    "options": {
+      "A": "Anabolismo",
+      "B": "Catabolismo",
+      "C": "Síntesis",
+      "D": "Anfbolismo"
+    },
+    "correctAnswer": "B",
+    "explanation": "El catabolismo es la fase del metabolismo que rompe enlaces químicos para obtener energía en forma de $ATP$.",
+    "category": "Metabolismo General"
+  },
+  {
+    "text": "¿Cuál es el producto final de la glucólisis en condiciones aeróbicas, antes de entrar en la mitocondria?",
+    "image": null,
+    "options": {
+      "A": "Piruvato",
+      "B": "Lactato",
+      "C": "Acetil-CoA",
+      "D": "Citrato"
+    },
+    "correctAnswer": "A",
+    "explanation": "La glucólisis transforma una molécula de glucosa en dos de piruvato en el citosol.",
+    "category": "Metabolismo de Glúcidos"
+  },
+  {
+    "text": "¿En qué lugar específico de la célula ocurre el Ciclo de Krebs (ciclo del ácido cítrico)?",
+    "image": null,
+    "options": {
+      "A": "Citosol",
+      "B": "Ribosomas",
+      "C": "Retículo endoplasmático",
+      "D": "Matriz mitocondrial"
+    },
+    "correctAnswer": "D",
+    "explanation": "El ciclo de Krebs se lleva a cabo en la matriz de la mitocondria, aprovechando el Acetil-CoA.",
+    "category": "Respiración Celular"
+  },
+  {
+    "text": "¿Qué hormona pancreática estimula la glucogenólisis y la gluconeogénesis en el hígado para elevar la glucemia?",
+    "image": null,
+    "options": {
+      "A": "Insulina",
+      "B": "Glucagón",
+      "C": "Somatostatina",
+      "D": "Cortisol"
+    },
+    "correctAnswer": "B",
+    "explanation": "El glucagón se libera ante niveles bajos de azúcar para movilizar las reservas de glucosa del hígado.",
+    "category": "Regulación Metabólica"
+  },
+  {
+    "text": "¿Cómo se denomina la vía metabólica encargada de la síntesis de glucosa a partir de precursores que no son carbohidratos (como aminoácidos o lactato)?",
+    "image": null,
+    "options": {
+      "A": "Glucogenólisis",
+      "B": "Glucólisis",
+      "C": "Gluconeogénesis",
+      "D": "Glucogenogénesis"
+    },
+    "correctAnswer": "C",
+    "explanation": "La gluconeogénesis permite fabricar glucosa 'de nuevo' durante periodos de ayuno prolongado.",
+    "category": "Metabolismo de Glúcidos"
+  },
+  {
+    "text": "¿Qué proceso catabólico se encarga de degradar los ácidos grasos para convertirlos en moléculas de Acetil-CoA?",
+    "image": null,
+    "options": {
+      "A": "Beta-oxidación",
+      "B": "Lipogénesis",
+      "C": "Saponificación",
+      "D": "Esterificación"
+    },
+    "correctAnswer": "A",
+    "explanation": "La beta-oxidación ocurre en la mitocondria y extrae energía de las cadenas de los ácidos grasos.",
+    "category": "Metabolismo de Lípidos"
+  },
+  {
+    "text": "¿Cuál es la principal molécula utilizada por las células como 'moneda energética' universal?",
+    "image": null,
+    "options": {
+      "A": "ADN",
+      "B": "Glucosa",
+      "C": "Fosfocreatina",
+      "D": "Adenosín Trifosfato (ATP)"
+    },
+    "correctAnswer": "D",
+    "explanation": "El $ATP$ almacena energía en sus enlaces de fosfato para ser utilizada en el trabajo celular.",
+    "category": "Bioenergética"
+  },
+  {
+    "text": "¿Cuál es la función principal del Ciclo de la Urea en el organismo humano?",
+    "image": null,
+    "options": {
+      "A": "Producir energía a partir de proteínas.",
+      "B": "Eliminar el amoniaco tóxico procedente del catabolismo de aminoácidos.",
+      "C": "Sintetizar nuevas proteínas musculares.",
+      "D": "Regular los niveles de calcio en sangre."
+    },
+    "correctAnswer": "B",
+    "explanation": "El amoniaco ($NH_3$) es altamente tóxico; el hígado lo convierte en urea, que es menos tóxica y se excreta por el riñón.",
+    "category": "Metabolismo de Proteínas"
+  },
+  {
+    "text": "¿Qué nombre recibe la parte proteica de una enzima que requiere un cofactor para ser funcional?",
+    "image": null,
+    "options": {
+      "A": "Apoenzima",
+      "B": "Holoenzima",
+      "C": "Coenzima",
+      "D": "Grupo prostético"
+    },
+    "correctAnswer": "A",
+    "explanation": "La apoenzima es la proteína inactiva. Cuando se une a su cofactor, forma la holoenzima (activa).",
+    "category": "Enzimología"
+  },
+  {
+    "text": "¿Qué sustancia se acumula en el músculo esquelético durante un ejercicio intenso en ausencia de oxígeno suficiente?",
+    "image": null,
+    "options": {
+      "A": "Ácido pirúvico",
+      "B": "Etanol",
+      "C": "Ácido láctico",
+      "D": "Cuerpos cetónicos"
+    },
+    "correctAnswer": "C",
+    "explanation": "La fermentación láctica permite regenerar el $NAD^{+}$ para que la glucólisis continúe en condiciones anaeróbicas.",
+    "category": "Metabolismo Muscular"
+  },
+  {
+    "text": "¿En qué complejo de la cadena de transporte de electrones actúa el Oxígeno como aceptador final?",
+    "image": null,
+    "options": {
+      "A": "Complejo I",
+      "B": "Complejo II",
+      "C": "ATP sintasa",
+      "D": "Complejo IV (Citocromo c oxidasa)"
+    },
+    "correctAnswer": "D",
+    "explanation": "El oxígeno se une a protones y electrones al final de la cadena para formar agua ($H_2O$).",
+    "category": "Respiración Celular"
+  },
+  {
+    "text": "¿Cuál es el principal órgano responsable de mantener la homeostasis de la glucosa en sangre?",
+    "image": null,
+    "options": {
+      "A": "Riñón",
+      "B": "Páncreas",
+      "C": "Hígado",
+      "D": "Músculo"
+    },
+    "correctAnswer": "C",
+    "explanation": "Aunque el páncreas detecta el nivel de glucosa, el hígado es el efector principal que almacena o libera glucosa según sea necesario.",
+    "category": "Fisiología Metabólica"
+  },
+  {
+    "text": "¿Qué proceso metabólico genera cuerpos cetónicos como el acetoacetato en situaciones de ayuno prolongado?",
+    "image": null,
+    "options": {
+      "A": "Cetólisis",
+      "B": "Cetogénesis",
+      "C": "Glucólisis",
+      "D": "Lipogénesis"
+    },
+    "correctAnswer": "B",
+    "explanation": "La cetogénesis ocurre en el hígado cuando hay un exceso de Acetil-CoA procedente de la oxidación de grasas sin suficiente oxalacetato.",
+    "category": "Metabolismo de Lípidos"
+  },
+  {
+    "text": "¿Cuál de las siguientes vitaminas actúa frecuentemente como precursor de coenzimas en el metabolismo energético?",
+    "image": null,
+    "options": {
+      "A": "Vitamina B (Complejo B)",
+      "B": "Vitamina C",
+      "C": "Vitamina E",
+      "D": "Vitamina K"
+    },
+    "correctAnswer": "A",
+    "explanation": "Vitaminas como la $B_1$ (tiamina), $B_2$ (riboflavina) y $B_3$ (niacina) son esenciales para el ciclo de Krebs y la cadena respiratoria.",
+    "category": "Metabolismo y Nutrición"
+  },
+  {
+    "text": "¿Qué nombre recibe el exceso de glucosa almacenada en forma de polímero en el hígado y los músculos?",
+    "image": null,
+    "options": {
+      "A": "Almidón",
+      "B": "Celulosa",
+      "C": "Triglicéridos",
+      "D": "Glucógeno"
+    },
+    "correctAnswer": "D",
+    "explanation": "El glucógeno es la reserva de carbohidratos en animales, equivalente al almidón en plantas.",
+    "category": "Metabolismo de Glúcidos"
+  }
+]

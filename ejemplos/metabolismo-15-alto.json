@@ -1,0 +1,197 @@
+[
+  {
+    "text": "¿Cuál es el principal regulador alostérico positivo de la enzima Fosfofructoquinasa-1 (PFK-1) en el hígado, que permite superar la inhibición por $ATP$?",
+    "image": null,
+    "options": {
+      "A": "Citrato",
+      "B": "Fructosa-2,6-bifosfato",
+      "C": "Gliceraldehído-3-fosfato",
+      "D": "Fosfoenolpiruvato"
+    },
+    "correctAnswer": "B",
+    "explanation": "La fructosa-2,6-bifosfato es el activador alostérico más potente de la PFK-1, cuya concentración depende de la relación insulina/glucagón a través de la enzima bifuncional PFK-2/FBPasa-2.",
+    "category": "Regulación de la Glucólisis"
+  },
+  {
+    "text": "En la lanzadera de carnitina, ¿qué molécula actúa como inhibidor potente de la Carnitina Palmitoiltransferasa I (CPT1), evitando la entrada de ácidos grasos a la mitocondria durante la síntesis lipídica?",
+    "image": null,
+    "options": {
+      "A": "Malonil-CoA",
+      "B": "Acetil-CoA",
+      "C": "Acil-carnitina",
+      "D": "Succinil-CoA"
+    },
+    "correctAnswer": "A",
+    "explanation": "El malonil-CoA, primer intermediario de la lipogénesis, inhibe a la CPT1 para evitar un ciclo fútil de síntesis y degradación simultánea de ácidos grasos.",
+    "category": "Metabolismo de Lípidos"
+  },
+  {
+    "text": "¿Qué enzima del ciclo de Krebs es la única que se encuentra anclada a la membrana mitocondrial interna, formando parte también de la cadena de transporte de electrones?",
+    "image": null,
+    "options": {
+      "A": "Isocitrato deshidrogenasa",
+      "B": "Malato deshidrogenasa",
+      "C": "Succinato deshidrogenasa",
+      "D": "Alfa-cetoglutarato deshidrogenasa"
+    },
+    "correctAnswer": "C",
+    "explanation": "La succinato deshidrogenasa constituye el Complejo II de la cadena respiratoria y cataliza la oxidación de succinato a fumarato mediante el coenzima $FAD$.",
+    "category": "Bioenergética Mitocondrial"
+  },
+  {
+    "text": "En el complejo de la Piruvato Deshidrogenasa (PDH), ¿qué modificación covalente provoca la INACTIVACIÓN del complejo?",
+    "image": null,
+    "options": {
+      "A": "Desfosforilación por una fosfatasa específica.",
+      "B": "Fosforilación por una quinasa activada por altos niveles de $ATP$.",
+      "C": "Acetilación de los residuos de lisina.",
+      "D": "Unión alostérica de $AMP$ cíclico."
+    },
+    "correctAnswer": "B",
+    "explanation": "La PDH quinasa fosforila el complejo PDH en presencia de indicadores de alta energía ($ATP$, $NADH$), inactivándolo para ahorrar glucosa.",
+    "category": "Regulación Metabólica"
+  },
+  {
+    "text": "¿Cuál es el activador alostérico obligatorio de la Carbamoyl fosfato sintetasa I, enzima limitante del ciclo de la urea?",
+    "image": null,
+    "options": {
+      "A": "Arginina",
+      "B": "Ornitina",
+      "C": "N-acetilglutamato",
+      "D": "Aspartato"
+    },
+    "correctAnswer": "C",
+    "explanation": "El N-acetilglutamato es esencial para la activación de la CPS-I. Sus niveles aumentan cuando hay abundancia de aminoácidos (glutamato y arginina).",
+    "category": "Metabolismo de Proteínas"
+  },
+  {
+    "text": "Durante la gluconeogénesis, ¿qué enzima mitocondrial es la encargada de convertir el piruvato en oxalacetato, requiriendo biotina y $ATP$?",
+    "image": null,
+    "options": {
+      "A": "Piruvato carboxilasa",
+      "B": "Fosfoenolpiruvato carboxiquinasa (PEPCK)",
+      "C": "Piruvato quinasa",
+      "D": "Lactato deshidrogenasa"
+    },
+    "correctAnswer": "A",
+    "explanation": "La piruvato carboxilasa realiza el primer paso de la gluconeogénesis y requiere Acetil-CoA como activador alostérico positivo para funcionar.",
+    "category": "Gluconeogénesis"
+  },
+  {
+    "text": "En la vía de las pentosas fosfato, la deficiencia de la enzima Glucosa-6-fosfato deshidrogenasa (G6PD) compromete la capacidad del eritrocito para:",
+    "image": null,
+    "options": {
+      "A": "Sintetizar $ATP$ mediante glucólisis anaerobia.",
+      "B": "Mantener el glutatión en estado reducido para neutralizar especies reactivas de oxígeno.",
+      "C": "Transportar dióxido de carbono hacia los pulmones.",
+      "D": "Liberar oxígeno en los tejidos periféricos."
+    },
+    "correctAnswer": "B",
+    "explanation": "La G6PD genera $NADPH$, necesario para que la glutatión reductasa mantenga el glutatión reducido, protegiendo a la célula del daño oxidativo.",
+    "category": "Vía de las Pentosas"
+  },
+  {
+    "text": "¿Qué molécula es el precursor común para la síntesis de cuerpos cetónicos y para la síntesis de colesterol en el hígado?",
+    "image": null,
+    "options": {
+      "A": "Malonil-CoA",
+      "B": "HMG-CoA (3-hidroxi-3-metilglutaril-CoA)",
+      "C": "Propionil-CoA",
+      "D": "Mevalonato"
+    },
+    "correctAnswer": "B",
+    "explanation": "El HMG-CoA se utiliza en la mitocondria para la cetogénesis y en el citosol para la síntesis de colesterol.",
+    "category": "Integración Metabólica"
+  },
+  {
+    "text": "¿Cuál es la función de la enzima Tioforasa (Succinil-CoA:3-cetoácido CoA transferasa) en el metabolismo de los cuerpos cetónicos?",
+    "image": null,
+    "options": {
+      "A": "Sintetizar acetoacetato en el hígado.",
+      "B": "Transportar cuerpos cetónicos a través de la barrera hematoencefálica.",
+      "C": "Activar el acetoacetato a acetoacetil-CoA en los tejidos extrahepáticos.",
+      "D": "Degradar el beta-hidroxibutirato en la orina."
+    },
+    "correctAnswer": "C",
+    "explanation": "La tioforasa permite que los tejidos periféricos utilicen los cuerpos cetónicos. El hígado carece de esta enzima para no consumir lo que produce.",
+    "category": "Metabolismo de Lípidos"
+  },
+  {
+    "text": "¿Qué efecto tiene el glucagón sobre la enzima Piruvato Quinasa hepática?",
+    "image": null,
+    "options": {
+      "A": "Inhibición mediante fosforilación mediada por la Proteína Cinasa A (PKA).",
+      "B": "Activación por desfosforilación.",
+      "C": "Aumento de su afinidad por el fosfoenolpiruvato.",
+      "D": "Inducción de su expresión génica a largo plazo."
+    },
+    "correctAnswer": "A",
+    "explanation": "El glucagón promueve la fosforilación de la piruvato quinasa, inactivándola para frenar la glucólisis y favorecer la gluconeogénesis durante el ayuno.",
+    "category": "Regulación Metabólica"
+  },
+  {
+    "text": "En el ciclo de la glucosa-alanina (Ciclo de Cahill), ¿cuál es el propósito fundamental de transportar alanina desde el músculo al hígado?",
+    "image": null,
+    "options": {
+      "A": "Sintetizar proteínas plasmáticas en el hígado.",
+      "B": "Proporcionar sustrato para la síntesis de ácidos biliares.",
+      "C": "Transportar grupos amino de forma segura y esqueletos de carbono para la gluconeogénesis.",
+      "D": "Eliminar el exceso de piruvato que causa acidosis láctica."
+    },
+    "correctAnswer": "C",
+    "explanation": "La alanina transporta amoníaco al hígado para su excreción (urea) y piruvato para ser convertido nuevamente en glucosa y devuelto al músculo.",
+    "category": "Metabolismo de Aminoácidos"
+  },
+  {
+    "text": "Respecto a la cadena de transporte de electrones, ¿cuál es el sitio de acción del inhibidor Rotenona?",
+    "image": null,
+    "options": {
+      "A": "Complejo III (Citocromo bc1).",
+      "B": "Complejo IV (Citocromo c oxidasa).",
+      "C": "Complejo I (NADH deshidrogenasa).",
+      "D": "Complejo V (ATP sintasa)."
+    },
+    "correctAnswer": "C",
+    "explanation": "La rotenona bloquea la transferencia de electrones desde los centros de Fe-S del Complejo I a la ubiquinona.",
+    "category": "Bioenergética"
+  },
+  {
+    "text": "¿Qué característica define a la enzima Glucoquinasa (Hexoquinasa IV) frente a la Hexoquinasa I de otros tejidos?",
+    "image": null,
+    "options": {
+      "A": "Baja constante de Michaelis ($K_m$) por la glucosa.",
+      "B": "Inhibición potente por su producto, la glucosa-6-fosfato.",
+      "C": "Alta $K_m$ y falta de inhibición por el producto, lo que permite al hígado actuar según los niveles de glucemia.",
+      "D": "Localización exclusiva en las mitocondrias neuronales."
+    },
+    "correctAnswer": "C",
+    "explanation": "La alta $K_m$ de la glucoquinasa asegura que el hígado solo procese glucosa de forma masiva cuando los niveles en sangre son muy elevados.",
+    "category": "Metabolismo de Glúcidos"
+  },
+  {
+    "text": "La señal de 'abundancia energética' intracelular que inhibe al complejo de la Acetil-CoA Carboxilasa (ACC) mediante fosforilación es:",
+    "image": null,
+    "options": {
+      "A": "La insulina.",
+      "B": "La proteína quinasa activada por AMP (AMPK).",
+      "C": "El citrato.",
+      "D": "La glucosa-6-fosfato."
+    },
+    "correctAnswer": "B",
+    "explanation": "Cuando los niveles de $ATP$ caen y sube el $AMP$, la AMPK fosforila e inactiva la ACC para detener la síntesis de ácidos grasos y ahorrar energía.",
+    "category": "Regulación de Lípidos"
+  },
+  {
+    "text": "¿Cuál es el destino metabólico del glicerol liberado durante la lipólisis en el tejido adiposo?",
+    "image": null,
+    "options": {
+      "A": "Es oxidado directamente en el adipocito para obtener $ATP$.",
+      "B": "Es transportado al hígado, donde puede ser convertido en dihidroxiacetona fosfato para glucólisis o gluconeogénesis.",
+      "C": "Se excreta por vía renal en forma de cuerpos cetónicos.",
+      "D": "Se condensa con el acetil-CoA para formar colesterol."
+    },
+    "correctAnswer": "B",
+    "explanation": "El tejido adiposo carece de glicerol quinasa; por tanto, el glicerol viaja al hígado, el único órgano capaz de activarlo y metabolizarlo.",
+    "category": "Metabolismo de Lípidos"
+  }
+]

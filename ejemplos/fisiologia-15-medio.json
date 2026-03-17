@@ -1,0 +1,197 @@
+[
+  {
+    "text": "¿Qué hormona es la principal responsable de aumentar la reabsorción de agua en los túbulos colectores del riñón?",
+    "image": null,
+    "options": {
+      "A": "Hormona Antidiurética (ADH)",
+      "B": "Aldosterona",
+      "C": "Renina",
+      "D": "Péptido Natriurético Atrial"
+    },
+    "correctAnswer": "A",
+    "explanation": "La ADH (vasopresina) aumenta la permeabilidad al agua en los túbulos colectores mediante la inserción de acuaporinas.",
+    "category": "Fisiología Renal"
+  },
+  {
+    "text": "¿Cuál es el principal neurotransmisor liberado por las neuronas posganglionares del sistema nervioso parasimpático?",
+    "image": null,
+    "options": {
+      "A": "Adrenalina",
+      "B": "Acetilcolina",
+      "C": "Noradrenalina",
+      "D": "Dopamina"
+    },
+    "correctAnswer": "B",
+    "explanation": "La acetilcolina es el neurotransmisor de todas las fibras preganglionares y de las posganglionares parasimpáticas.",
+    "category": "Fisiología Nerviosa"
+  },
+  {
+    "text": "¿En qué fase del ciclo cardiaco se produce el cierre de las válvulas semilunares (aórtica y pulmonar)?",
+    "image": null,
+    "options": {
+      "A": "Sístole auricular",
+      "B": "Contracción isovolumétrica",
+      "C": "Relajación isovolumétrica",
+      "D": "Eyección ventricular"
+    },
+    "correctAnswer": "C",
+    "explanation": "El cierre de las válvulas semilunares ocurre al inicio de la diástole ventricular, durante la fase de relajación isovolumétrica, generando el segundo ruido cardiaco.",
+    "category": "Fisiología Cardiovascular"
+  },
+  {
+    "text": "¿Qué células de los islotes de Langerhans en el páncreas son las encargadas de secretar insulina?",
+    "image": null,
+    "options": {
+      "A": "Células alfa",
+      "B": "Células delta",
+      "C": "Células F",
+      "D": "Células beta"
+    },
+    "correctAnswer": "D",
+    "explanation": "Las células beta producen insulina, mientras que las alfa producen glucagón y las delta somatostatina.",
+    "category": "Fisiología Endocrina"
+  },
+  {
+    "text": "¿Cómo se denomina el volumen de aire que entra y sale de los pulmones en una respiración normal y tranquila?",
+    "image": null,
+    "options": {
+      "A": "Volumen Corriente (VC)",
+      "B": "Volumen de Reserva Inspiratoria (VRI)",
+      "C": "Volumen Residual (VR)",
+      "D": "Capacidad Vital (CV)"
+    },
+    "correctAnswer": "A",
+    "explanation": "El volumen corriente o basal es la cantidad de aire que se desplaza en una respiración normal, aproximadamente 500 ml en un adulto.",
+    "category": "Fisiología Respiratoria"
+  },
+  {
+    "text": "¿Cuál es el ion más abundante en el líquido extracelular (LEC) y principal determinante de la osmolaridad plasmática?",
+    "image": null,
+    "options": {
+      "A": "Potasio",
+      "B": "Sodio",
+      "C": "Calcio",
+      "D": "Magnesio"
+    },
+    "correctAnswer": "B",
+    "explanation": "El sodio es el catión dominante en el LEC, mientras que el potasio lo es en el líquido intracelular.",
+    "category": "Fisiología Celular"
+  },
+  {
+    "text": "¿Qué enzima es la responsable de iniciar la digestión química de los almidones en la cavidad bucal?",
+    "image": null,
+    "options": {
+      "A": "Pepsina",
+      "B": "Lipasa",
+      "C": "Amilasa salival (Ptialina)",
+      "D": "Tripsina"
+    },
+    "correctAnswer": "C",
+    "explanation": "La amilasa salival rompe los enlaces del almidón para convertirlos en azúcares más simples como la maltosa.",
+    "category": "Fisiología Digestiva"
+  },
+  {
+    "text": "¿Cuál es la función principal de los fotorreceptores denominados 'conos' en la retina?",
+    "image": null,
+    "options": {
+      "A": "Visión en condiciones de baja luminosidad (escotópica)",
+      "B": "Percepción del movimiento periférico",
+      "C": "Regulación del diámetro pupilar",
+      "D": "Visión en color y agudeza visual"
+    },
+    "correctAnswer": "D",
+    "explanation": "Los conos son responsables de la visión cromática y el detalle, mientras que los bastones se encargan de la visión nocturna.",
+    "category": "Fisiología de los Sentidos"
+  },
+  {
+    "text": "¿Qué proteína plasmática es esencial para el transporte de hierro en la sangre?",
+    "image": null,
+    "options": {
+      "A": "Transferrina",
+      "B": "Albúmina",
+      "C": "Ferritina",
+      "D": "Hemoglobina"
+    },
+    "correctAnswer": "A",
+    "explanation": "La transferrina transporta el hierro por el plasma, mientras que la ferritina es la forma principal de almacenamiento en los tejidos.",
+    "category": "Fisiología Hemática"
+  },
+  {
+    "text": "¿Qué fenómeno eléctrico ocurre en la membrana neuronal cuando entran masivamente iones de sodio (Na+)?",
+    "image": null,
+    "options": {
+      "A": "Repolarización",
+      "B": "Despolarización",
+      "C": "Hiperpolarización",
+      "D": "Potencial de reposo"
+    },
+    "correctAnswer": "B",
+    "explanation": "La entrada de cargas positivas (Na+) hace que el interior de la célula sea menos negativo, generando la despolarización.",
+    "category": "Fisiología Nerviosa"
+  },
+  {
+    "text": "¿Dónde se produce principalmente la mayor parte de la digestión y absorción de nutrientes?",
+    "image": null,
+    "options": {
+      "A": "Estómago",
+      "B": "Intestino grueso",
+      "C": "Intestino delgado",
+      "D": "Esófago"
+    },
+    "correctAnswer": "C",
+    "explanation": "El intestino delgado, especialmente en el duodeno y yeyuno, es el sitio principal de degradación química y absorción.",
+    "category": "Fisiología Digestiva"
+  },
+  {
+    "text": "¿Qué componente del surfactante pulmonar evita el colapso de los alvéolos al final de la espiración?",
+    "image": null,
+    "options": {
+      "A": "Glucosa",
+      "B": "Hierro",
+      "C": "Anhidrasa carbónica",
+      "D": "Fosfolípidos (Dipalmitoilfosfatidilcolina)"
+    },
+    "correctAnswer": "D",
+    "explanation": "El surfactante reduce la tensión superficial en la interfaz aire-líquido del alvéolo, evitando que colapsen.",
+    "category": "Fisiología Respiratoria"
+  },
+  {
+    "text": "¿Qué órgano es el encargado de la síntesis de la mayoría de los factores de coagulación sanguínea?",
+    "image": null,
+    "options": {
+      "A": "Hígado",
+      "B": "Bazo",
+      "C": "Médula ósea",
+      "D": "Riñón"
+    },
+    "correctAnswer": "A",
+    "explanation": "El hígado sintetiza casi todos los factores de la coagulación; una insuficiencia hepática grave suele causar hemorragias.",
+    "category": "Fisiología Hemática"
+  },
+  {
+    "text": "¿Qué hormona es secretada por la glándula tiroides para regular el metabolismo basal del organismo?",
+    "image": null,
+    "options": {
+      "A": "Calcitonina",
+      "B": "Tiroxina (T4)",
+      "C": "Paratohormona",
+      "D": "Cortisol"
+    },
+    "correctAnswer": "B",
+    "explanation": "La T4 (tiroxina) y la T3 (triyodotironina) aumentan el consumo de oxígeno y la actividad metabólica de casi todos los tejidos.",
+    "category": "Fisiología Endocrina"
+  },
+  {
+    "text": "¿Cuál es la unidad funcional y estructural del músculo esquelético, situada entre dos líneas Z?",
+    "image": null,
+    "options": {
+      "A": "Miofibrilla",
+      "B": "Fascículo",
+      "C": "Sarcómero",
+      "D": "Sarcolema"
+    },
+    "correctAnswer": "C",
+    "explanation": "El sarcómero es la unidad contráctil mínima del músculo estriado.",
+    "category": "Fisiología Muscular"
+  }
+]

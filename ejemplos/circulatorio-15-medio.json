@@ -1,0 +1,197 @@
+[
+  {
+    "text": "¿Qué nombre recibe la capa serosa interna que está adherida directamente a la superficie del miocardio?",
+    "image": null,
+    "options": {
+      "A": "Epicardio",
+      "B": "Endocardio",
+      "C": "Pericardio fibroso",
+      "D": "Pericardio parietal"
+    },
+    "correctAnswer": "A",
+    "explanation": "El epicardio es la capa visceral del pericardio seroso y constituye la capa más externa de la pared del corazón.",
+    "category": "Anatomía Cardiaca"
+  },
+  {
+    "text": "¿Cuál es la función principal de las arterias pulmonares?",
+    "image": null,
+    "options": {
+      "A": "Llevar sangre oxigenada a los tejidos del pulmón.",
+      "B": "Transportar sangre carboxigenada desde el ventrículo derecho a los pulmones.",
+      "C": "Recoger la sangre oxigenada de los alvéolos.",
+      "D": "Nutrir el miocardio mediante la circulación menor."
+    },
+    "correctAnswer": "B",
+    "explanation": "Las arterias pulmonares son las únicas arterias del cuerpo adulto que transportan sangre pobre en oxígeno.",
+    "category": "Circulación Pulmonar"
+  },
+  {
+    "text": "¿En qué estructura del sistema de conducción se produce un ligero retraso del impulso eléctrico para permitir el llenado ventricular?",
+    "image": null,
+    "options": {
+      "A": "Nodo sinoauricular",
+      "B": "Fibras de Purkinje",
+      "C": "Nodo auriculoventricular (AV)",
+      "D": "Haz de His"
+    },
+    "correctAnswer": "C",
+    "explanation": "El nodo AV retrasa el impulso aproximadamente 0.1 segundos, asegurando que las aurículas terminen de contraerse antes que los ventrículos.",
+    "category": "Fisiología Eléctrica"
+  },
+  {
+    "text": "¿Qué característica diferencia estructuralmente a las venas de las arterias?",
+    "image": null,
+    "options": {
+      "A": "Las venas tienen una túnica media mucho más gruesa.",
+      "B": "Las arterias poseen válvulas en toda su extensión.",
+      "C": "Las venas tienen paredes más elásticas para soportar altas presiones.",
+      "D": "Las venas poseen válvulas que impiden el retroceso de la sangre."
+    },
+    "correctAnswer": "D",
+    "explanation": "Debido a la baja presión en el sistema venoso, las válvulas son esenciales para el retorno sanguíneo, especialmente en las extremidades inferiores.",
+    "category": "Histología Vascular"
+  },
+  {
+    "text": "¿Qué porcentaje aproximado del volumen sanguíneo total representa el plasma en un adulto sano?",
+    "image": null,
+    "options": {
+      "A": "55%",
+      "B": "45%",
+      "C": "90%",
+      "D": "20%"
+    },
+    "correctAnswer": "A",
+    "explanation": "La sangre se compone aproximadamente de un 55% de plasma y un 45% de elementos formes (hematocrito).",
+    "category": "Hematología"
+  },
+  {
+    "text": "¿Cuál de las siguientes proteínas plasmáticas es fundamental para el proceso de coagulación sanguínea?",
+    "image": null,
+    "options": {
+      "A": "Inmunoglobulina",
+      "B": "Fibrinógeno",
+      "C": "Albúmina",
+      "D": "Hemoglobina"
+    },
+    "correctAnswer": "B",
+    "explanation": "El fibrinógeno (factor I de la coagulación) se convierte en fibrina para formar la red que estabiliza el coágulo.",
+    "category": "Hematología"
+  },
+  {
+    "text": "¿Qué vaso sanguíneo recoge la sangre venosa de la cabeza, el cuello y las extremidades superiores para llevarla a la aurícula derecha?",
+    "image": null,
+    "options": {
+      "A": "Vena porta",
+      "B": "Vena yugular interna",
+      "C": "Vena cava superior",
+      "D": "Vena cava inferior"
+    },
+    "correctAnswer": "C",
+    "explanation": "La vena cava superior drena la mitad superior del cuerpo, mientras que la inferior drena la mitad por debajo del diafragma.",
+    "category": "Anatomía Vascular"
+  },
+  {
+    "text": "¿Dónde se localizan los barorreceptores encargados de monitorizar la presión arterial a corto plazo?",
+    "image": null,
+    "options": {
+      "A": "En las venas pulmonares.",
+      "B": "En el ventrículo izquierdo.",
+      "C": "En los capilares sistémicos.",
+      "D": "En el seno carotídeo y el arco aórtico."
+    },
+    "correctAnswer": "D",
+    "explanation": "Estos receptores de estiramiento envían señales al centro cardiovascular del bulbo raquídeo para ajustar la presión de forma inmediata.",
+    "category": "Fisiología Cardiovascular"
+  },
+  {
+    "text": "¿Qué válvula cardiaca se encuentra entre la aurícula izquierda y el ventrículo izquierdo?",
+    "image": null,
+    "options": {
+      "A": "Válvula Mitral",
+      "B": "Válvula Tricúspide",
+      "C": "Válvula Aórtica",
+      "D": "Válvula Sigmoidea"
+    },
+    "correctAnswer": "A",
+    "explanation": "La válvula mitral (o bicúspide) regula el paso de sangre oxigenada en el lado izquierdo del corazón.",
+    "category": "Anatomía Cardiaca"
+  },
+  {
+    "text": "La presión arterial sistólica corresponde a:",
+    "image": null,
+    "options": {
+      "A": "La presión mínima en las arterias durante el llenado ventricular.",
+      "B": "La presión máxima ejercida sobre las paredes arteriales durante la contracción ventricular.",
+      "C": "La diferencia entre la presión venosa y la arterial.",
+      "D": "La presión media en el interior de los capilares."
+    },
+    "correctAnswer": "B",
+    "explanation": "La sístole es la fase de contracción y eyección, donde la presión alcanza su punto más alto en el sistema arterial.",
+    "category": "Fisiología Cardiovascular"
+  },
+  {
+    "text": "¿Cómo se denomina la estructura que comunica las aurículas en el feto y que normalmente se cierra tras el nacimiento?",
+    "image": null,
+    "options": {
+      "A": "Conducto arterioso",
+      "B": "Vena umbilical",
+      "C": "Foramen oval",
+      "D": "Ligamento venoso"
+    },
+    "correctAnswer": "C",
+    "explanation": "El foramen o agujero oval permite el paso de sangre de derecha a izquierda saltándose la circulación pulmonar fetal.",
+    "category": "Circulación Fetal"
+  },
+  {
+    "text": "Las arterias coronarias, encargadas de nutrir al propio corazón, tienen su origen en:",
+    "image": null,
+    "options": {
+      "A": "La arteria pulmonar.",
+      "B": "El seno coronario.",
+      "C": "La aurícula izquierda.",
+      "D": "La base de la arteria aorta (senos de Valsalva)."
+    },
+    "correctAnswer": "D",
+    "explanation": "Las coronarias derecha e izquierda nacen inmediatamente por encima de la válvula aórtica.",
+    "category": "Anatomía Coronaria"
+  },
+  {
+    "text": "¿Qué es el hematocrito?",
+    "image": null,
+    "options": {
+      "A": "El porcentaje de glóbulos rojos respecto al volumen total de sangre.",
+      "B": "El número total de plaquetas por milímetro cúbico.",
+      "C": "La cantidad de hemoglobina por cada eritrocito.",
+      "D": "El tiempo que tarda la sangre en coagular."
+    },
+    "correctAnswer": "A",
+    "explanation": "Es una medida clínica estándar para evaluar la capacidad de transporte de oxígeno y detectar anemias.",
+    "category": "Hematología"
+  },
+  {
+    "text": "¿Qué función tienen las cuerdas tendinosas en las válvulas auriculoventriculares?",
+    "image": null,
+    "options": {
+      "A": "Abrir activamente las válvulas durante la diástole.",
+      "B": "Evitar que los velos de la válvula se inviertan hacia las aurículas durante la sístole.",
+      "C": "Transmitir el impulso eléctrico a los músculos papilares.",
+      "D": "Filtrar los posibles trombos que circulan por el ventrículo."
+    },
+    "correctAnswer": "B",
+    "explanation": "Las cuerdas tendinosas, junto con los músculos papilares, mantienen la tensión de las válvulas para evitar el prolapso y la regurgitación sanguínea.",
+    "category": "Anatomía Cardiaca"
+  },
+  {
+    "text": "¿Qué efecto produce el nervio vago (estimulación parasimpática) sobre la función cardiaca?",
+    "image": null,
+    "options": {
+      "A": "Aumento de la fuerza de contracción.",
+      "B": "Aceleración del nodo sinoauricular.",
+      "C": "Disminución de la frecuencia cardiaca (bradicardia).",
+      "D": "Aumento de la velocidad de conducción en el Haz de His."
+    },
+    "correctAnswer": "C",
+    "explanation": "El sistema parasimpático actúa como un freno para el corazón, reduciendo la frecuencia de los disparos del marcapasos natural.",
+    "category": "Regulación Nerviosa"
+  }
+]

@@ -1,0 +1,197 @@
+[
+  {
+    "text": "¿Cuál es el mecanismo molecular exacto por el cual el óxido nítrico (NO) produce vasorelajación en las células del músculo liso vascular?",
+    "image": null,
+    "options": {
+      "A": "Activación de la adenilato ciclasa para aumentar los niveles de cAMP.",
+      "B": "Unión directa a los canales de calcio tipo L inhibiendo su apertura.",
+      "C": "Activación de la guanilato ciclasa soluble (GCs) y aumento del cGMP, que activa la Proteína Cinasa G (PKG).",
+      "D": "Fosforilación directa de la cadena ligera de miosina (MLC)."
+    },
+    "correctAnswer": "C",
+    "explanation": "El NO difunde a la célula muscular, activa la GCs para producir cGMP; la PKG resultante fosforila diversos sustratos que disminuyen el $Ca^{2+}$ citosólico y activan la fosfatasa de la cadena ligera de miosina.",
+    "category": "Fisiología Molecular Vascular"
+  },
+  {
+    "text": "En el contexto de la microcirculación, según la ecuación de Starling, ¿qué ocurre si la presión oncótica intersticial ($\u03c0_{i}$) aumenta significativamente?",
+    "image": null,
+    "options": {
+      "A": "Se favorece la filtración desde el capilar hacia el intersticio.",
+      "B": "Se incrementa la reabsorción neta hacia el compartimento vascular.",
+      "C": "La presión hidrostática capilar ($P_{c}$) cae por retroalimentación negativa.",
+      "D": "No hay efecto, ya que solo la presión oncótica plasmática ($\u03c0_{p}$) es determinante."
+    },
+    "correctAnswer": "A",
+    "explanation": "La $\u03c0_{i}$ ejerce una fuerza de 'atracción' de líquido hacia afuera del vaso. Un aumento de esta presión (como en acumulación de proteínas intersticiales) favorece el edema por filtración.",
+    "category": "Hemodinámica Capilar"
+  },
+  {
+    "text": "¿Qué transportador es el responsable de la salida de bicarbonato ($HCO_{3}^{-}$) a través de la membrana basolateral de las células parietales gástricas durante la fase de secreción ácida?",
+    "image": null,
+    "options": {
+      "A": "Intercambiador $Na^{+}/H^{+}$ (NHE).",
+      "B": "Cotransportador $Na^{+}/HCO_{3}^{-}$ (NBC).",
+      "C": "Bomba $H^{+}/K^{+}$ ATPasa.",
+      "D": "Intercambiador $Cl^{-}/HCO_{3}^{-}$ (Anion Exchanger 1)."
+    },
+    "correctAnswer": "D",
+    "explanation": "Para mantener el pH intracelular mientras se bombean protones al lumen, la célula expulsa $HCO_{3}^{-}$ hacia la sangre a través del intercambiador de cloruro-bicarbonato, causando la 'marea alcalina' pospandrial.",
+    "category": "Fisiología Gastrointestinal"
+  },
+  {
+    "text": "En la electrofisiología cardiaca, el fenómeno de 'reentrada' como sustrato de arritmias se ve favorecido principalmente por:",
+    "image": null,
+    "options": {
+      "A": "Un periodo refractario efectivo excesivamente largo.",
+      "B": "La presencia de un bloqueo unidireccional y una velocidad de conducción lenta.",
+      "C": "Una hiperpotasemia severa que estabilice el potencial de reposo.",
+      "D": "La ausencia de vías accesorias anatómicas."
+    },
+    "correctAnswer": "B",
+    "explanation": "Para que se establezca un circuito de reentrada, el impulso debe encontrar una vía bloqueada en un sentido, dar la vuelta por otra vía y regresar cuando la primera ya ha salido de su periodo refractario (conducción lenta).",
+    "category": "Electrofisiología Cardiaca"
+  },
+  {
+    "text": "¿Cuál es la función del transportador SGLT2 en el nefrón y dónde se localiza exactamente?",
+    "image": null,
+    "options": {
+      "A": "Reabsorción de glucosa de alta afinidad en el túbulo contorneado distal.",
+      "B": "Reabsorción del 90% de la glucosa filtrada en el segmento S1 del túbulo proximal.",
+      "C": "Secreción activa de glucosa en el asa de Henle.",
+      "D": "Reabsorción de sodio y glucosa en el túbulo colector bajo control de la insulina."
+    },
+    "correctAnswer": "B",
+    "explanation": "SGLT2 es un transportador de baja afinidad y alta capacidad localizado en la parte inicial del túbulo proximal ($S1$), responsable de la mayor parte de la recuperación de glucosa.",
+    "category": "Fisiología Renal"
+  },
+  {
+    "text": "¿Qué efecto tiene el aumento de la relación Insulina/Glucagón sobre la enzima Fructosa-2,6-bifosfatasa en el hígado?",
+    "image": null,
+    "options": {
+      "A": "Estimula su actividad para favorecer la gluconeogénesis.",
+      "B": "Inhibe su actividad, aumentando los niveles de Fructosa-2,6-bifosfato y estimulando la glucólisis.",
+      "C": "Provoca la translocación de la enzima al núcleo celular.",
+      "D": "No tiene efecto sobre esta enzima, ya que solo actúa sobre la Glucoquinasa."
+    },
+    "correctAnswer": "B",
+    "explanation": "La insulina promueve la desfosforilación del complejo enzimático bifuncional PFK-2/FBPasa-2, activando la quinasa y aumentando la $F-2,6-P_{2}$, que es el activador alostérico más potente de la glucólisis.",
+    "category": "Fisiología Metabólica"
+  },
+  {
+    "text": "¿Cómo afecta la Ley de Laplace a la estabilidad alveolar en ausencia de surfactante pulmonar?",
+    "image": null,
+    "options": {
+      "A": "Los alvéolos más grandes tienden a colapsar hacia los más pequeños.",
+      "B": "La presión es igual en todos los alvéolos independientemente del radio.",
+      "C": "La presión dentro de los alvéolos pequeños es mayor que en los grandes, favoreciendo su colapso (atelectasia).",
+      "D": "La tensión superficial disminuye automáticamente al reducirse el radio alveolar."
+    },
+    "correctAnswer": "C",
+    "explanation": "Según $P = 2T / r$, si la tensión ($T$) es constante, a menor radio ($r$), mayor presión ($P$). Sin surfactante para igualar tensiones, los alvéolos pequeños vacían su aire en los grandes.",
+    "category": "Fisiología Respiratoria"
+  },
+  {
+    "text": "Respecto a la retroalimentación tubuloglomerular, ¿qué detectan las células de la mácula densa para regular la TFG?",
+    "image": null,
+    "options": {
+      "A": "La presión hidrostática en la arteriola aferente.",
+      "B": "La concentración de glucosa en el líquido tubular.",
+      "C": "El flujo de $NaCl$ que entra a través del cotransportador NKCC2.",
+      "D": "Los niveles de renina sistémica circulante."
+    },
+    "correctAnswer": "C",
+    "explanation": "La mácula densa detecta cambios en la carga de $NaCl$. Un aumento del flujo indica alta TFG, lo que provoca la liberación de adenosina para contraer la arteriola aferente.",
+    "category": "Fisiología Renal Avanzada"
+  },
+  {
+    "text": "¿Qué receptor adrenérgico es responsable de la relajación del músculo detrusor de la vejiga durante la fase de llenado?",
+    "image": null,
+    "options": {
+      "A": "Receptor $\u03b1_{1}$",
+      "B": "Receptor $\u03b2_{1}$",
+      "C": "Receptor $\u03b2_{3}$",
+      "D": "Receptor $\u03b1_{2}$"
+    },
+    "correctAnswer": "C",
+    "explanation": "La activación de receptores $\u03b2_{3}$ adrenérgicos por el sistema simpático relaja el detrusor, permitiendo el almacenamiento de orina a baja presión.",
+    "category": "Fisiología del Sistema Autónomo"
+  },
+  {
+    "text": "¿Cuál es el mecanismo de acción de la toxina botulínica en la unión neuromuscular?",
+    "image": null,
+    "options": {
+      "A": "Bloqueo de los receptores nicotínicos postsinápticos.",
+      "B": "Escisión de las proteínas SNARE, impidiendo la exocitosis de acetilcolina.",
+      "C": "Inhibición de la acetilcolinesterasa en la hendidura sináptica.",
+      "D": "Bloqueo de los canales de calcio dependientes de voltaje presinápticos."
+    },
+    "correctAnswer": "B",
+    "explanation": "La toxina botulínica degrada proteínas como SNAP-25 o sinaptobrevina (SNARE), evitando que las vesículas de neurotransmisor se fusionen con la membrana presináptica.",
+    "category": "Neurofisiología Molecular"
+  },
+  {
+    "text": "En el sistema somatosensorial, ¿qué característica define a las fibras nerviosas tipo C?",
+    "image": null,
+    "options": {
+      "A": "Alta velocidad de conducción y gran diámetro mielinizado.",
+      "B": "Conducción lenta, amielínicas, responsables del dolor sordo y difuso.",
+      "C": "Especializadas en la propiocepción consciente y vibración rápida.",
+      "D": "Inervan exclusivamente los husos neuromusculares."
+    },
+    "correctAnswer": "B",
+    "explanation": "Las fibras C son las más lentas (0.5-2 m/s), no tienen mielina y median el dolor secundario, crónico o térmico extremo.",
+    "category": "Fisiología Sensorial"
+  },
+  {
+    "text": "¿Cuál es el papel principal de la Hepcidina en el metabolismo del hierro?",
+    "image": null,
+    "options": {
+      "A": "Estimular la absorción intestinal de hierro ferroso.",
+      "B": "Inducir la degradación de la ferroportina, disminuyendo la liberación de hierro a la sangre.",
+      "C": "Facilitar el transporte de hierro unido a la transferrina.",
+      "D": "Promover la síntesis de hemoglobina en los eritroblastos."
+    },
+    "correctAnswer": "B",
+    "explanation": "La hepcidina es el regulador negativo clave; al unirse a la ferroportina (en enterocitos y macrófagos) y destruirla, impide que el hierro pase al plasma.",
+    "category": "Fisiología Hemática"
+  },
+  {
+    "text": "¿Qué cambio ocurre en el potencial de membrana de los fotorreceptores en respuesta a la OSCURIDAD?",
+    "image": null,
+    "options": {
+      "A": "Hiperpolarización debido a la salida de potasio.",
+      "B": "Despolarización relativa mediada por la 'corriente oscura' de sodio y calcio.",
+      "C": "Cese completo de la liberación de glutamato.",
+      "D": "Activación de la cascada de la transducina."
+    },
+    "correctAnswer": "B",
+    "explanation": "En oscuridad, los niveles de cGMP son altos, manteniendo abiertos los canales de sodio/calcio, lo que mantiene a la célula despolarizada ($\u221240$ mV) y liberando glutamato constantemente.",
+    "category": "Neurofisiología Visual"
+  },
+  {
+    "text": "¿Qué efecto produce un aumento de la $P_{CO_{2}}$ arterial sobre la resistencia vascular cerebral?",
+    "image": null,
+    "options": {
+      "A": "Vasoconstricción intensa para proteger la barrera hematoencefálica.",
+      "B": "Vasodilatación masiva mediada por la disminución del pH del líquido intersticial cerebral.",
+      "C": "No produce cambios, ya que el flujo cerebral es autorregulado solo por presión.",
+      "D": "Aumento de la resistencia para disminuir la presión intracraneal."
+    },
+    "correctAnswer": "B",
+    "explanation": "El $CO_{2}$ es el regulador más potente del flujo sanguíneo cerebral. La hipercapnia disminuye el pH, lo que relaja las arteriolas cerebrales para aumentar el flujo y barrer el exceso de gas.",
+    "category": "Fisiología Cardiovascular/Neuro"
+  },
+  {
+    "text": "¿Cuál es la función de la enzima 1-alfa-hidroxilasa y dónde se localiza principalmente?",
+    "image": null,
+    "options": {
+      "A": "Conversión de colesterol en pregnenolona en las mitocondrias suprarrenales.",
+      "B": "Conversión de 25-hidroxivitamina D en 1,25-dihidroxivitamina D (forma activa) en el riñón.",
+      "C": "Inactivación de la hormona tiroidea en el hígado.",
+      "D": "Degradación de catecolaminas en la hendidura sináptica."
+    },
+    "correctAnswer": "B",
+    "explanation": "Localizada en las células del túbulo proximal, esta enzima es estimulada por la PTH para activar la Vitamina D, esencial para la homeostasis del calcio.",
+    "category": "Fisiología Endocrina/Renal"
+  }
+]

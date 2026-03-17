@@ -1,0 +1,197 @@
+[
+  {
+    "text": "¿Cómo afecta el efecto Anrep a la función cardiaca tras un aumento brusco de la poscarga?",
+    "image": null,
+    "options": {
+      "A": "Produce una disminución del volumen sistólico para proteger el miocardio.",
+      "B": "Provoca un aumento progresivo de la contractilidad miocárdica debido a un incremento del calcio intracitoplasmático.",
+      "C": "Genera una bradicardia refleja mediada por los barorreceptores aórticos.",
+      "D": "Inhibe la apertura de los canales de sodio para reducir el gasto energético."
+    },
+    "correctAnswer": "B",
+    "explanation": "El efecto Anrep es un mecanismo intrínseco donde un aumento sostenido de la presión en la aorta conlleva un incremento de la inotropía tras unos minutos.",
+    "category": "Fisiología Cardiaca Avanzada"
+  },
+  {
+    "text": "En un electrocardiograma, ¿qué representa fisiológicamente el intervalo PR?",
+    "image": null,
+    "options": {
+      "A": "El tiempo de despolarización ventricular total.",
+      "B": "La repolarización de las aurículas.",
+      "C": "El tiempo que tarda el impulso en viajar desde el nodo sinusal hasta el inicio de la activación ventricular.",
+      "D": "El retraso exclusivo en las fibras de Purkinje."
+    },
+    "correctAnswer": "C",
+    "explanation": "El intervalo PR incluye la despolarización auricular y el retraso fisiológico en el nodo auriculoventricular.",
+    "category": "Electrofisiología"
+  },
+  {
+    "text": "¿Cuál es la función principal de la fracción de eyección (FE) y cuál es su valor normal en un adulto sano?",
+    "image": null,
+    "options": {
+      "A": "Mide el flujo coronario total; valor normal > 90%.",
+      "B": "Mide el porcentaje de sangre que el ventrículo bombea en cada latido; valor normal entre 55-70%.",
+      "C": "Representa la presión telediastólica; valor normal 120 mmHg.",
+      "D": "Indica el volumen de reserva inspiratoria; valor normal 2 litros."
+    },
+    "correctAnswer": "B",
+    "explanation": "La FE es un indicador clave de la función sistólica y se calcula como $(Volumen Sistólico / Volumen Telediastólico) * 100$.",
+    "category": "Hemodinámica"
+  },
+  {
+    "text": "Según la Ley de Poiseuille, si el radio de un vaso sanguíneo se reduce a la mitad, ¿cómo varía la resistencia al flujo?",
+    "image": null,
+    "options": {
+      "A": "La resistencia se duplica.",
+      "B": "La resistencia aumenta 4 veces.",
+      "C": "La resistencia aumenta 16 veces.",
+      "D": "La resistencia se mantiene constante por la autorregulación."
+    },
+    "correctAnswer": "C",
+    "explanation": "La resistencia es inversamente proporcional a la cuarta potencia del radio ($r^4$). Al ser $2^4 = 16$, la resistencia aumenta drásticamente.",
+    "category": "Biofísica Circulatoria"
+  },
+  {
+    "text": "¿Qué mecanismo explica el fenómeno de autorregulación del flujo sanguíneo renal y cerebral conocido como 'teoría miogénica'?",
+    "image": null,
+    "options": {
+      "A": "La liberación de óxido nítrico ante el roce de la sangre.",
+      "B": "La contracción del músculo liso vascular en respuesta al estiramiento por aumento de la presión transmural.",
+      "C": "La activación del sistema renina-angiotensina-aldosterona.",
+      "D": "La estimulación de los nervios simpáticos perivasculares."
+    },
+    "correctAnswer": "B",
+    "explanation": "El estiramiento abre canales de calcio dependientes de estiramiento, provocando vasoconstricción para mantener el flujo constante.",
+    "category": "Regulación Vascular"
+  },
+  {
+    "text": "¿Cuál es la principal diferencia entre el potencial de acción de una célula contráctil miocárdica y una célula del nodo sinusal?",
+    "image": null,
+    "options": {
+      "A": "Las células del nodo sinusal no tienen fase 0.",
+      "B": "Las células del nodo sinusal carecen de fase 1 y fase 2 (meseta), y poseen una fase 4 inestable.",
+      "C": "Las células contráctiles dependen únicamente del calcio para la despolarización inicial.",
+      "D": "El potencial de reposo es más negativo en las células del nodo sinusal."
+    },
+    "correctAnswer": "B",
+    "explanation": "Las células marcapasos tienen una despolarización espontánea diastólica (fase 4) mediada por corrientes $I_f$ y de calcio.",
+    "category": "Electrofisiología"
+  },
+  {
+    "text": "¿Qué efecto produce el Péptido Natriurético Atrial (ANP) sobre las resistencias periféricas y el volumen sanguíneo?",
+    "image": null,
+    "options": {
+      "A": "Vasoconstricción y aumento de la reabsorción de sodio.",
+      "B": "Vasodilatación y estimulación de la excreción de sodio y agua (natriuresis).",
+      "C": "Aumento de la secreción de ADH y Aldosterona.",
+      "D": "No tiene efecto sobre los vasos, solo sobre la frecuencia cardiaca."
+    },
+    "correctAnswer": "B",
+    "explanation": "El ANP se libera ante la distensión auricular para reducir la precarga y la presión arterial.",
+    "category": "Fisiología Endocrina Cardiovascular"
+  },
+  {
+    "text": "Durante la fase de eyección ventricular reducida, ¿qué ocurre con las presiones en el ventrículo y la aorta?",
+    "image": null,
+    "options": {
+      "A": "La presión ventricular cae por debajo de la auricular.",
+      "B": "Ambas presiones comienzan a descender, pero la ventricular sigue siendo ligeramente superior a la aórtica hasta el cierre valvular.",
+      "C": "La presión aórtica aumenta bruscamente por encima de la ventricular.",
+      "D": "Se produce el primer ruido cardiaco por el flujo turbulento."
+    },
+    "correctAnswer": "B",
+    "explanation": "Aunque el flujo disminuye, la válvula sigue abierta hasta que el gradiente de presión se invierte al final de la sístole.",
+    "category": "Ciclo Cardiaco"
+  },
+  {
+    "text": "¿Qué factor es el determinante más importante de la resistencia vascular coronaria en condiciones fisiológicas?",
+    "image": null,
+    "options": {
+      "A": "El control simpático sobre los receptores alfa-1.",
+      "B": "La demanda metabólica de oxígeno del miocardio (adenosina, lactato, $H^+$).",
+      "C": "La presión arterial sistémica media.",
+      "D": "La viscosidad de la sangre."
+    },
+    "correctAnswer": "B",
+    "explanation": "El corazón tiene una extracción de oxígeno casi máxima; por ello, cualquier aumento de demanda debe suplirse con vasodilatación metabólica.",
+    "category": "Circulación Coronaria"
+  },
+  {
+    "text": "¿Qué describe el Reflejo de Cushing en el contexto de la fisiología cardiovascular?",
+    "image": null,
+    "options": {
+      "A": "Taquicardia e hipotensión ante una hemorragia digestiva.",
+      "B": "Hipertensión sistémica y bradicardia refleja ante un aumento de la presión intracraneal.",
+      "C": "Vasodilatación generalizada tras un síncope vasovagal.",
+      "D": "Aumento de la ventilación tras detectar acidosis metabólica."
+    },
+    "correctAnswer": "B",
+    "explanation": "Es una respuesta del centro vasomotor para intentar mantener la perfusión cerebral ante la compresión externa del tejido encefálico.",
+    "category": "Fisiopatología Cardiovascular"
+  },
+  {
+    "text": "En la microcirculación, el coeficiente de reflexión ($\u03c3$) de Starling indica:",
+    "image": null,
+    "options": {
+      "A": "La capacidad del capilar para dilatarse.",
+      "B": "La permeabilidad de la membrana capilar a las proteínas plasmáticas.",
+      "C": "La velocidad del flujo eritrocitario.",
+      "D": "El grado de saturación de oxígeno en el extremo venoso."
+    },
+    "correctAnswer": "B",
+    "explanation": "Un $\u03c3$ de 1 significa que la membrana es impermeable a proteínas; un $\u03c3$ de 0 significa que es totalmente permeable.",
+    "category": "Fisiología Capilar"
+  },
+  {
+    "text": "¿Cuál es la función del complejo 'calcio-calmodulina' en el músculo liso de las arteriolas?",
+    "image": null,
+    "options": {
+      "A": "Bloquear la unión de actina y miosina.",
+      "B": "Activar la quinasa de la cadena ligera de miosina (MLCK) para permitir la contracción.",
+      "C": "Bombear calcio hacia el exterior de la célula.",
+      "D": "Despolarizar el sarcolema mediante la apertura de canales de potasio."
+    },
+    "correctAnswer": "B",
+    "explanation": "A diferencia del músculo estriado (troponina), el liso requiere calmodulina para activar la miosina mediante fosforilación.",
+    "category": "Fisiología Muscular Vascular"
+  },
+  {
+    "text": "¿Qué cambio se observa en el sistema circulatorio como respuesta compensatoria inicial ante una insuficiencia cardiaca congestiva?",
+    "image": null,
+    "options": {
+      "A": "Disminución de la actividad del sistema simpático.",
+      "B": "Aumento de la secreción de renina y angiotensina II.",
+      "C": "Inhibición de la hormona antidiurética.",
+      "D": "Vasodilatación arterial generalizada."
+    },
+    "correctAnswer": "B",
+    "explanation": "El cuerpo interpreta el bajo gasto como hipovolemia, activando el eje RAA para retener sodio y agua, lo que a menudo agrava el edema.",
+    "category": "Fisiopatología"
+  },
+  {
+    "text": "El segundo ruido cardiaco ($S_2$) se produce por el cierre de las válvulas semilunares. ¿Cuál es la causa del desdoblamiento fisiológico de $S_2$ durante la inspiración?",
+    "image": null,
+    "options": {
+      "A": "Cierre precoz de la válvula mitral.",
+      "B": "Aumento del retorno venoso al ventrículo derecho, que retrasa el cierre de la válvula pulmonar.",
+      "C": "Disminución de la frecuencia cardiaca durante la fase inspiratoria.",
+      "D": "Aumento de la presión intratorácica que comprime la aorta."
+    },
+    "correctAnswer": "B",
+    "explanation": "En inspiración, la presión intratorácica negativa aumenta el llenado del corazón derecho, prolongando su eyección y retrasando el componente pulmonar de $S_2$.",
+    "category": "Semióloga Cardiovascular"
+  },
+  {
+    "text": "¿Cuál es el principal efecto de la noradrenalina sobre los receptores beta-1 del nodo sinusal?",
+    "image": null,
+    "options": {
+      "A": "Aumento de la conductancia al potasio para hiperpolarizar la célula.",
+      "B": "Aumento de la pendiente de la despolarización diastólica lenta por incremento de las corrientes $I_f$ e $I_{Ca,L}$.",
+      "C": "Cierre de los canales de sodio dependientes de voltaje.",
+      "D": "Prolongación del periodo refractario absoluto."
+    },
+    "correctAnswer": "B",
+    "explanation": "Esto produce un efecto cronotrópico positivo, aumentando la frecuencia cardiaca al alcanzar más rápido el umbral de disparo.",
+    "category": "Farmacología/Fisiología"
+  }
+]

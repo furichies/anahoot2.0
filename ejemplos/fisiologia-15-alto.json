@@ -1,0 +1,197 @@
+[
+  {
+    "text": "¿Cuál es el mecanismo iónico responsable de la fase 4 (potencial de marcapasos) en las células del nodo sinoauricular?",
+    "image": null,
+    "options": {
+      "A": "Aumento de la conductancia al $K^{+}$ y cierre de canales de calcio tipo L.",
+      "B": "Entrada de sodio a través de canales activados por hiperpolarización ($I_{f}$) y entrada de calcio tipo T.",
+      "C": "Salida masiva de potasio a través de canales rectificadores tardíos.",
+      "D": "Entrada de calcio exclusivamente a través de canales tipo L dependientes de voltajes altos."
+    },
+    "correctAnswer": "B",
+    "explanation": "La despolarización lenta diastólica se debe a la corriente 'funny' ($I_{f}$) de sodio y a la apertura posterior de canales de calcio tipo T antes de alcanzar el umbral.",
+    "category": "Fisiología Cardiovascular Avanzada"
+  },
+  {
+    "text": "Respecto a la curva de disociación de la hemoglobina, ¿cuál de los siguientes factores provoca un desplazamiento hacia la IZQUIERDA (aumento de la afinidad)?",
+    "image": null,
+    "options": {
+      "A": "Aumento de la temperatura corporal.",
+      "B": "Aumento de la concentración de 2,3-Bifosfoglicerato (2,3-BPG).",
+      "C": "Disminución del pH sanguíneo (acidosis).",
+      "D": "Presencia de Carboxihemoglobina o niveles bajos de $PCO_{2}$."
+    },
+    "correctAnswer": "D",
+    "explanation": "La disminución de $PCO_{2}$, el aumento del pH (alcalosis) y la presencia de variantes como la hemoglobina fetal o intoxicación por CO desplazan la curva a la izquierda.",
+    "category": "Fisiología Respiratoria"
+  },
+  {
+    "text": "¿Cuál es el efecto neto de la Angiotensina II sobre la hemodinámica renal en estados de hipoperfusión moderada?",
+    "image": null,
+    "options": {
+      "A": "Vasodilatación de la arteriola aferente para aumentar el flujo plasmático renal.",
+      "B": "Vasoconstricción preferencial de la arteriola eferente para mantener la tasa de filtración glomerular (TFG).",
+      "C": "Inhibición de la secreción de aldosterona para evitar la sobrecarga hídrica.",
+      "D": "Aumento de la excreción fraccional de sodio en el túbulo contorneado proximal."
+    },
+    "correctAnswer": "B",
+    "explanation": "La Angiotensina II constriñe la arteriola eferente más que la aferente, aumentando la presión intraglomerular para compensar la caída de presión sistémica.",
+    "category": "Fisiología Renal"
+  },
+  {
+    "text": "En el acoplamiento excitación-contracción del músculo esquelético, ¿qué estructura actúa como sensor de voltaje en el túbulo T?",
+    "image": null,
+    "options": {
+      "A": "Canal de rianodina (RyR1).",
+      "B": "Bomba SERCA de calcio.",
+      "C": "Receptor de dihidropiridina (DHPR).",
+      "D": "Calsecuestrina."
+    },
+    "correctAnswer": "C",
+    "explanation": "El receptor de dihidropiridina es un canal de calcio tipo L modificado que actúa como sensor de voltaje, activando mecánicamente al receptor de rianodina del retículo sarcoplásmico.",
+    "category": "Fisiología Muscular"
+  },
+  {
+    "text": "¿Qué hormona gastrointestinal estimula principalmente la secreción pancreática rica en bicarbonato en respuesta al pH ácido en el duodeno?",
+    "image": null,
+    "options": {
+      "A": "Secretina",
+      "B": "Colecistoquinina (CCK)",
+      "C": "Gastrina",
+      "D": "Péptido Inhibidor Gástrico (GIP)"
+    },
+    "correctAnswer": "A",
+    "explanation": "La secretina se libera ante la acidez duodenal y actúa sobre las células ductales pancreáticas para secretar bicarbonato y neutralizar el quimo.",
+    "category": "Fisiología Digestiva"
+  },
+  {
+    "text": "Durante el periodo refractario absoluto de una neurona, ¿cuál es el estado de los canales de Sodio ($Na^{+}$) dependientes de voltaje?",
+    "image": null,
+    "options": {
+      "A": "Están cerrados pero disponibles para activarse ante un estímulo supraumbral.",
+      "B": "Están abiertos permitiendo el flujo constante de iones.",
+      "C": "Están en estado inactivado (compuerta de inactivación cerrada) y no pueden abrirse.",
+      "D": "Están bloqueados por la salida masiva de iones potasio."
+    },
+    "correctAnswer": "C",
+    "explanation": "La inactivación de los canales de $Na^{+}$ impide que se genere un nuevo potencial de acción sin importar la intensidad del estímulo hasta que la membrana se repolarice.",
+    "category": "Neurofisiología"
+  },
+  {
+    "text": "¿Cuál es el mecanismo fisiológico del Reflejo de Bainbridge?",
+    "image": null,
+    "options": {
+      "A": "Descenso de la frecuencia cardiaca ante un aumento de la presión en el arco aórtico.",
+      "B": "Aumento de la frecuencia cardiaca debido al estiramiento de los receptores de baja presión en la aurícula derecha.",
+      "C": "Vasoconstricción periférica masiva ante la hipoxia detectada por quimiorreceptores.",
+      "D": "Apnea temporal tras una inspiración forzada."
+    },
+    "correctAnswer": "B",
+    "explanation": "El reflejo de Bainbridge ajusta la frecuencia cardiaca al alza cuando aumenta el retorno venoso para evitar la congestión en la circulación venosa.",
+    "category": "Fisiología Cardiovascular"
+  },
+  {
+    "text": "En el sistema visual, ¿qué ocurre en un fotorreceptor (cono o bastón) tras la incidencia de luz?",
+    "image": null,
+    "options": {
+      "A": "Aumento de los niveles de cGMP y apertura de canales de sodio.",
+      "B": "Despolarización de la membrana y liberación masiva de glutamato.",
+      "C": "Hiperpolarización de la membrana debido al cierre de canales catiónicos dependientes de cGMP.",
+      "D": "Activación de la adenilato ciclasa y aumento de AMP cíclico."
+    },
+    "correctAnswer": "C",
+    "explanation": "La luz activa la transducina, que activa la fosfodiesterasa, reduciendo el cGMP; esto cierra los canales de sodio/calcio e hiperpolariza la célula.",
+    "category": "Fisiología Sensorial"
+  },
+  {
+    "text": "¿Qué zona de la corteza suprarrenal es la encargada de la síntesis de mineralocorticoides como la aldosterona?",
+    "image": null,
+    "options": {
+      "A": "Zona Glomerular",
+      "B": "Zona Fascicular",
+      "C": "Zona Reticular",
+      "D": "Médula suprarrenal"
+    },
+    "correctAnswer": "A",
+    "explanation": "La zona glomerular es la más externa y produce aldosterona. La fascicular produce glucocorticoides y la reticular andrógenos.",
+    "category": "Fisiología Endocrina"
+  },
+  {
+    "text": "El espacio muerto fisiológico se diferencia del espacio muerto anatómico en que el primero incluye:",
+    "image": null,
+    "options": {
+      "A": "El volumen de aire en la tráquea y bronquios principales.",
+      "B": "El volumen de aire en los alvéolos que no realizan intercambio gaseoso (perfusión nula).",
+      "C": "La capacidad residual funcional residual tras una espiración forzada.",
+      "D": "El aire que queda en la mascarilla de ventilación."
+    },
+    "correctAnswer": "B",
+    "explanation": "El espacio muerto fisiológico es la suma del anatómico más el espacio muerto alveolar (alvéolos ventilados pero no perfundidos).",
+    "category": "Fisiología Respiratoria"
+  },
+  {
+    "text": "¿Cuál es la función principal de las células de Sertoli en el testículo bajo la influencia de la FSH?",
+    "image": null,
+    "options": {
+      "A": "Producción de testosterona a partir de colesterol.",
+      "B": "Mantenimiento de la barrera hematotesticular y soporte nutricional a las células germinales.",
+      "C": "Contracción de los túbulos seminíferos para el transporte de esperma.",
+      "D": "Inhibición de la secreción de hormona luteinizante (LH)."
+    },
+    "correctAnswer": "B",
+    "explanation": "Las células de Sertoli nutren a los espermatozoides, forman la barrera hematotesticular y secretan proteína ligadora de andrógenos e inhibina.",
+    "category": "Fisiología Reproductiva"
+  },
+  {
+    "text": "En el equilibrio ácido-base, ¿cómo se calcula el 'Anion Gap' o brecha aniónica plasmática?",
+    "image": null,
+    "options": {
+      "A": "$Na^{+} - (Cl^{-} + HCO_{3}^{-})$",
+      "B": "$(Na^{+} + K^{+}) - (Cl^{-} - HCO_{3}^{-})$",
+      "C": "$Cl^{-} - (Na^{+} + HCO_{3}^{-})$",
+      "D": "$HCO_{3}^{-} / PCO_{2}$"
+    },
+    "correctAnswer": "A",
+    "explanation": "El Anion Gap representa los aniones no medidos (proteínas, fosfatos, lactato). Su valor normal es de $8-12$ mEq/L.",
+    "category": "Fisiología Clínica"
+  },
+  {
+    "text": "¿Cuál es el principal factor estimulante para la liberación de Eritropoyetina (EPO) por las células intersticiales peritubulares del riñón?",
+    "image": null,
+    "options": {
+      "A": "Hipertensión arterial renal.",
+      "B": "Bajos niveles de vitamina $B_{12}$.",
+      "C": "Presión parcial de oxígeno ($PO_{2}$) tisular baja detectada por el factor HIF-1.",
+      "D": "Aumento del pH sanguíneo."
+    },
+    "correctAnswer": "C",
+    "explanation": "La hipoxia estabiliza el factor inducible por hipoxia (HIF-1), que actúa como factor de transcripción para el gen de la EPO.",
+    "category": "Fisiología Hemática"
+  },
+  {
+    "text": "Respecto a la filtración glomerular, ¿qué efecto tiene la constricción de la arteriola AFERENTE?",
+    "image": null,
+    "options": {
+      "A": "Aumenta la presión hidrostática capilar glomerular y la TFG.",
+      "B": "Disminuye la presión hidrostática capilar glomerular y disminuye la TFG.",
+      "C": "Aumenta el flujo plasmático renal pero mantiene la TFG constante.",
+      "D": "No produce cambios en la presión capilar pero aumenta la presión oncótica."
+    },
+    "correctAnswer": "B",
+    "explanation": "Al cerrar la entrada al glomérulo (aferente), cae tanto el flujo sanguíneo como la presión de filtración.",
+    "category": "Fisiología Renal"
+  },
+  {
+    "text": "¿Qué función cumple la Calmodulina en el músculo LISO?",
+    "image": null,
+    "options": {
+      "A": "Se une al calcio y activa la cinasa de la cadena ligera de miosina (MLCK).",
+      "B": "Desplaza a la tropomiosina para liberar los sitios de unión de la actina.",
+      "C": "Hidroliza el ATP para permitir el golpe de fuerza de la miosina.",
+      "D": "Bloquea el canal de calcio del retículo sarcoplásmico por retroalimentación negativa."
+    },
+    "correctAnswer": "A",
+    "explanation": "En el músculo liso no hay troponina; el complejo Calcio-Calmodulina es el encargado de activar la MLCK para fosforilar la miosina e iniciar la contracción.",
+    "category": "Fisiología Muscular"
+  }
+]
